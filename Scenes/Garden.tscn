@@ -2,8 +2,6 @@
 
 [node name="Garden" type="Node2D" unique_id=760420180]
 
-[node name="Raph test" type="Node" parent="." unique_id=228637147]
-
 [node name="Earth" type="TileMapLayer" parent="." unique_id=1765609759]
 
 [node name="Flowers" type="TileMapLayer" parent="." unique_id=173931164]
