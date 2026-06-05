@@ -4,8 +4,8 @@ var currentFlower = "Sunflower" # default flower (we will add code later on to c
 
 
 # dictionnary containing the name of all our flowers 
-# with assinged value a list of their order and max growth
-var flowerDic = {"Sunflower": [0, 6]} #Sunflower, at position 0 in the list, with 5 growth stages
+# with assinged value a list of their order and max growth, and sell price
+var flowerDic = {"Sunflower": [0, 6, 1]} #Sunflower, at position 0 in the list, with 5 growth stages, price
 
 
 func place_flower(tile, name, stage):
