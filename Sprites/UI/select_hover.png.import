@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c270v3tk02l2v"
-path="res://.godot/imported/prototype earth 10x10.png-d6069e9065750dbfc8a690ea1783c4f4.ctex"
+uid="uid://dxmbiauxfof12"
+path="res://.godot/imported/select_hover.png-6762f4be1c58be5760296dd4b35600a6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/prototype earth 10x10.png"
-dest_files=["res://.godot/imported/prototype earth 10x10.png-d6069e9065750dbfc8a690ea1783c4f4.ctex"]
+source_file="res://Sprites/UI/select_hover.png"
+dest_files=["res://.godot/imported/select_hover.png-6762f4be1c58be5760296dd4b35600a6.ctex"]
 
 [params]
 

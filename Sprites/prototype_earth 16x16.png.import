@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mf0igc5y1xff"
-path="res://.godot/imported/sunflower.png-482a1303280fddeff987a3cfc4773108.ctex"
+uid="uid://do858v8gein0u"
+path="res://.godot/imported/prototype_earth 16x16.png-ffc664d50483605e734d98f5ddda0877.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Flowers/SunFlower/sunflower.png"
-dest_files=["res://.godot/imported/sunflower.png-482a1303280fddeff987a3cfc4773108.ctex"]
+source_file="res://Sprites/prototype_earth 16x16.png"
+dest_files=["res://.godot/imported/prototype_earth 16x16.png-ffc664d50483605e734d98f5ddda0877.ctex"]
 
 [params]
 
