@@ -1,6 +1,5 @@
 [gd_scene format=4 uid="uid://c4wmk5e07a2oj"]
 
-[ext_resource type="Script" path="res://Scenes/cointest.gd" id="1_5qaag"]
 [ext_resource type="Texture2D" uid="uid://do858v8gein0u" path="res://Sprites/prototype_earth 16x16.png" id="2_gscdv"]
 [ext_resource type="Texture2D" uid="uid://mf0igc5y1xff" path="res://Sprites/Flowers/SunFlower/sunflower.png" id="2_m3i3o"]
 [ext_resource type="Script" uid="uid://b4qcmbhrbudk5" path="res://Scripts/UI/ui_manager.gd" id="2_wa1tm"]
@@ -41,7 +40,6 @@ tile_size = Vector2i(16, 32)
 sources/0 = SubResource("TileSetAtlasSource_o3d2i")
 
 [node name="Garden" type="Node2D" unique_id=760420180]
-script = ExtResource("1_5qaag")
 
 [node name="TileMaps" type="Node" parent="." unique_id=729581561]
 
