@@ -21,4 +21,5 @@ func place_flower(tile, name, stage):
 		return [currentFlower, stage]
 	else:
 		erase_cell(tile)
+		GameManager.gain_coins(1)
 		return ["", -1]
