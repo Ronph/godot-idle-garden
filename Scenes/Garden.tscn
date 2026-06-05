@@ -1,9 +1,10 @@
 [gd_scene format=4 uid="uid://c4wmk5e07a2oj"]
 
-[ext_resource type="Script" uid="uid://0wdeumf2kc3a" path="res://Scenes/cointest.gd" id="1_5qaag"]
+[ext_resource type="Script" path="res://Scenes/cointest.gd" id="1_5qaag"]
 [ext_resource type="Texture2D" uid="uid://c270v3tk02l2v" path="res://Sprites/prototype earth 10x10.png" id="1_eeg7j"]
-[ext_resource type="Texture2D" uid="uid://dsimpdo3kbeev" path="res://Sprites/UI/Coin/coin.png" id="2_m3i3o"]
+[ext_resource type="Texture2D" uid="uid://lbiynx687xkt" path="res://Sprites/Flowers/SunFlower/sunflower.png" id="2_m3i3o"]
 [ext_resource type="Script" uid="uid://b4qcmbhrbudk5" path="res://Scripts/UI/ui_manager.gd" id="2_wa1tm"]
+[ext_resource type="Texture2D" uid="uid://dsimpdo3kbeev" path="res://Sprites/UI/Coin/coin.png" id="5_20tfy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m3i3o"]
 texture = ExtResource("1_eeg7j")
@@ -14,6 +15,20 @@ texture_region_size = Vector2i(10, 10)
 tile_size = Vector2i(10, 10)
 sources/0 = SubResource("TileSetAtlasSource_m3i3o")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nw5gq"]
+texture = ExtResource("2_m3i3o")
+texture_region_size = Vector2i(16, 31)
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_gscdv"]
+tile_size = Vector2i(16, 31)
+sources/0 = SubResource("TileSetAtlasSource_nw5gq")
+
 [node name="Garden" type="Node2D" unique_id=760420180]
 script = ExtResource("1_5qaag")
 
@@ -22,6 +37,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAA
 tile_set = SubResource("TileSet_wa1tm")
 
 [node name="Flowers" type="TileMapLayer" parent="." unique_id=173931164]
+tile_set = SubResource("TileSet_gscdv")
 
 [node name="UIManager" type="CanvasLayer" parent="." unique_id=1152060625]
 script = ExtResource("2_wa1tm")
@@ -31,7 +47,7 @@ offset_left = 91.0
 offset_top = -243.0
 offset_right = 491.0
 offset_bottom = 297.0
-texture = ExtResource("2_m3i3o")
+texture = ExtResource("5_20tfy")
 
 [node name="CoinCount" type="Label" parent="UIManager" unique_id=77309131]
 anchors_preset = -1
