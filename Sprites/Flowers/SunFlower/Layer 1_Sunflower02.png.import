@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b07mishsuxyb6"
-path="res://.godot/imported/Layer 1_Sunflower01.png-b45818bf54001354228b898ae434da74.ctex"
+uid="uid://bh8qlnd2w6gvd"
+path="res://.godot/imported/Layer 1_Sunflower02.png-3a4a55ee236408876974e2e89b4a098b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Flowers/Layer 1_Sunflower01.png"
-dest_files=["res://.godot/imported/Layer 1_Sunflower01.png-b45818bf54001354228b898ae434da74.ctex"]
+source_file="res://Sprites/Flowers/SunFlower/Layer 1_Sunflower02.png"
+dest_files=["res://.godot/imported/Layer 1_Sunflower02.png-3a4a55ee236408876974e2e89b4a098b.ctex"]
 
 [params]
 
