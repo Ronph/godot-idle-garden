@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://c4wmk5e07a2oj"]
+
+[node name="Garden" type="Node2D" unique_id=760420180]
+
+[node name="Earth" type="TileMapLayer" parent="." unique_id=1765609759]
+
+[node name="Flowers" type="TileMapLayer" parent="." unique_id=173931164]

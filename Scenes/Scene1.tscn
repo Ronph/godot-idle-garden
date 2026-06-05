@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://c4wmk5e07a2oj"]
-
-[node name="Scene1" type="Node2D" unique_id=760420180]
-
-[node name="Raph test" type="Node" parent="." unique_id=228637147]
