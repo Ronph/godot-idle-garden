@@ -5,7 +5,7 @@ var currentFlower = "Sunflower" # default flower (we will add code later on to c
 
 # dictionnary containing the name of all our flowers 
 # with assinged value a list of their order and max growth, and sell price
-var flowerDic = {"Sunflower": [0, 6, 1]} #Sunflower, at position 0 in the list, with 5 growth stages, price
+var flowerDic = {"Sunflower": [0, 6, 2]} #Sunflower, at position 0 in the list, with 5 growth stages, price
 
 
 func place_flower(tile, name, stage):
@@ -21,5 +21,5 @@ func place_flower(tile, name, stage):
 		return [currentFlower, stage]
 	else:
 		erase_cell(tile)
-		GameManager.gain_coins(1)
+		GameManager.gain_coins(flowerDic[name][2])
 		return ["", -1]
