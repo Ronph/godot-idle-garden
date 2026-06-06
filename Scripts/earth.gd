@@ -42,7 +42,7 @@ func _ready():
 
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	tile = local_to_map(get_global_mouse_position())
 	
 	# erase all hover border selection to give the illusion of hovering
