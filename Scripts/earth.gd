@@ -60,3 +60,7 @@ func _process(delta: float) -> void:
 func reset_tiles():
 	for i in tileDic.keys():
 			set_cell(Vector2i(tileDic[i][2], tileDic[i][3]), 1, Vector2i(0, 0), 0)
+
+
+func _on_shop_button_pressed() -> void:
+	pass # Replace with function body.

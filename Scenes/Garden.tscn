@@ -5,8 +5,10 @@
 [ext_resource type="Texture2D" uid="uid://bnik8hsy5c2o7" path="res://Sprites/earth_hover 32 x32.png" id="3_gscdv"]
 [ext_resource type="Texture2D" uid="uid://0uywekhf00h3" path="res://Sprites/earth 32x32.png" id="4_o3d2i"]
 [ext_resource type="Texture2D" uid="uid://dsimpdo3kbeev" path="res://Sprites/UI/Coin/coin.png" id="5_20tfy"]
+[ext_resource type="Texture2D" uid="uid://dcm2uc7k8a878" path="res://Sprites/Flowers/Cabbage/CabbageSheet.png" id="5_0205m"]
 [ext_resource type="Script" uid="uid://lb3mbbvk1vva" path="res://Scripts/flowers.gd" id="5_gscdv"]
 [ext_resource type="Script" uid="uid://df2yce2d43n8i" path="res://Scripts/earth.gd" id="6_o3d2i"]
+[ext_resource type="Script" uid="uid://bv2b5i871pnsm" path="res://Scripts/UI/Shop.gd" id="8_o3d2i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0205m"]
 texture = ExtResource("3_gscdv")
@@ -47,12 +49,29 @@ texture_region_size = Vector2i(16, 32)
 2:0/0 = 0
 2:0/0/texture_origin = Vector2i(0, 16)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ve2dw"]
+texture = ExtResource("5_0205m")
+texture_region_size = Vector2i(32, 16)
+0:2/0 = 0
+1:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+0:11/0 = 0
+1:11/0 = 0
+0:15/0 = 0
+1:15/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_gscdv"]
 tile_shape = 1
 tile_layout = 5
 tile_offset_axis = 1
 tile_size = Vector2i(32, 16)
 sources/0 = SubResource("TileSetAtlasSource_nw5gq")
+sources/1 = SubResource("TileSetAtlasSource_ve2dw")
 
 [node name="Garden" type="Node2D" unique_id=760420180]
 
@@ -90,9 +109,38 @@ offset_bottom = 23.00003
 grow_horizontal = 2
 text = "0"
 
+[node name="ShopButton" type="Button" parent="UIManager" unique_id=728489337]
+offset_left = 97.0
+offset_top = 3.0
+offset_right = 149.0
+offset_bottom = 34.0
+text = "SHOP"
+script = ExtResource("8_o3d2i")
+
+[node name="ShopPanel" type="Panel" parent="UIManager" unique_id=37663772]
+offset_right = 91.0
+offset_bottom = 70.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UIManager/ShopPanel" unique_id=1440626707]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="geButton" type="Button" parent="UIManager/ShopPanel/VBoxContainer" unique_id=1076190731]
+layout_mode = 2
+text = "Sunflower"
+
+[node name="caButton" type="Button" parent="UIManager/ShopPanel/VBoxContainer" unique_id=1359865363]
+layout_mode = 2
+text = "Cabbage"
+
 [node name="Label" type="Label" parent="." unique_id=223644544]
 offset_right = 40.0
 offset_bottom = 23.0
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1647965446]
 position = Vector2(224, 112)
+
+[connection signal="pressed" from="UIManager/ShopButton" to="UIManager" method="_on_shop_button_pressed"]
+[connection signal="pressed" from="UIManager/ShopPanel/VBoxContainer/geButton" to="UIManager" method="_on_sunflower_button_pressed"]
+[connection signal="pressed" from="UIManager/ShopPanel/VBoxContainer/caButton" to="UIManager" method="_on_cabbage_button_pressed"]
