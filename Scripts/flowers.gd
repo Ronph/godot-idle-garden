@@ -26,3 +26,16 @@ func place_flower(tile, flowName, stage, x, y):
 		erase_cell(tile)
 		GameManager.gain_coins(flowerDic[flowName][2])
 		return ["", -1, x, y]
+
+func place_random_flower(tile, _flowName, _stage, x, y):
+	set_cell(tile, flowerDic[currentFlower][0], Vector2i(0, 0), 0)
+	return [currentFlower, 0, x, y]
+
+func water_random_flower(tile, flowName, stage, x, y):
+	if stage < flowerDic[flowName][1]:
+		set_cell(tile, flowerDic[flowName][0], Vector2i(stage, 0), 0)
+		return [flowName, stage, x, y]
+	else:
+		erase_cell(tile)
+		GameManager.gain_coins(flowerDic[flowName][2])
+		return ["", -1, x, y]
