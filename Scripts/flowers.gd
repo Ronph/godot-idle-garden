@@ -7,8 +7,6 @@ var currentFlower : String:
 # dictionnary containing the name of all our flowers 
 # with assinged value a list of their order and max growth, and sell price
 
-
-
 func place_flower(tile, flowName, stage, x, y):
 	print(flowName)
 	# if there is no name then nothnig is currently planted so we plant our current default flower

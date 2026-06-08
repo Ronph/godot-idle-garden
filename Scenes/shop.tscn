@@ -18,12 +18,12 @@ layout_mode = 2
 layout_mode = 2
 text = "Return"
 
-[node name="SunFlower" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=341604501]
+[node name="Sunflower" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=341604501]
 layout_mode = 2
 
 [node name="Cabbage" type="Button" parent="CanvasLayer/VBoxContainer" unique_id=139151246]
 layout_mode = 2
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/ReturnButton" to="CanvasLayer" method="_on_returnShop_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/SunFlower" to="CanvasLayer" method="_on_sunflower_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Sunflower" to="CanvasLayer" method="_on_sunflower_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/Cabbage" to="CanvasLayer" method="_on_cabbage_button_pressed"]
