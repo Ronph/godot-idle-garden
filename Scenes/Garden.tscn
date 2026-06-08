@@ -8,7 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://dcm2uc7k8a878" path="res://Sprites/Flowers/Cabbage/CabbageSheet.png" id="5_0205m"]
 [ext_resource type="Script" uid="uid://lb3mbbvk1vva" path="res://Scripts/flowers.gd" id="5_gscdv"]
 [ext_resource type="Script" uid="uid://df2yce2d43n8i" path="res://Scripts/earth.gd" id="6_o3d2i"]
-[ext_resource type="Script" uid="uid://bv2b5i871pnsm" path="res://Scripts/UI/Shop.gd" id="8_o3d2i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0205m"]
 texture = ExtResource("3_gscdv")
@@ -73,6 +72,17 @@ tile_size = Vector2i(32, 16)
 sources/0 = SubResource("TileSetAtlasSource_nw5gq")
 sources/1 = SubResource("TileSetAtlasSource_ve2dw")
 
+[sub_resource type="GDScript" id="GDScript_o3d2i"]
+script/source = "extends Button
+
+
+func _on_buy_cabbage_pressed():
+	if GameManager.coins >= 5:  # cost to unlock
+		GameManager.coins -= 5
+		GameManager.current_flower = \"Cabbage\"
+		$CoinsLabel.text = str(GameManager.coins)
+"
+
 [node name="Garden" type="Node2D" unique_id=760420180]
 
 [node name="TileMaps" type="Node" parent="." unique_id=729581561]
@@ -115,7 +125,7 @@ offset_top = 3.0
 offset_right = 149.0
 offset_bottom = 34.0
 text = "SHOP"
-script = ExtResource("8_o3d2i")
+script = SubResource("GDScript_o3d2i")
 
 [node name="ShopPanel" type="Panel" parent="UIManager" unique_id=37663772]
 offset_right = 91.0
