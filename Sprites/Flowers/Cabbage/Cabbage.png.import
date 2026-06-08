@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dcm2uc7k8a878"
-path="res://.godot/imported/CabbageSheet.png-3078fa73730e09d9e744d6722abf1f7a.ctex"
+path="res://.godot/imported/Cabbage.png-7a28d5423a2caa5697db9182bb80d571.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Flowers/Cabbage/CabbageSheet.png"
-dest_files=["res://.godot/imported/CabbageSheet.png-3078fa73730e09d9e744d6722abf1f7a.ctex"]
+source_file="res://Sprites/Flowers/Cabbage/Cabbage.png"
+dest_files=["res://.godot/imported/Cabbage.png-7a28d5423a2caa5697db9182bb80d571.ctex"]
 
 [params]
 

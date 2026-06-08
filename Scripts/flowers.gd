@@ -6,8 +6,8 @@ var currentFlower : String:
 
 # dictionnary containing the name of all our flowers 
 # with assinged value a list of their order and max growth, and sell price
-var flowerDic = {"SunFlower": [0, 6, 1],
-"Cabbage": [1, 4, 2]} #Sunflower, at position 0 in the list, with 5 growth stages, price
+var flowerDic = {"SunFlower": [0, 6, 1], #Sunflower, at position 0 in the list, with 5 growth stages, sell price
+				 "Cabbage": [1, 4, 2]} 
 
 
 func place_flower(tile, flowName, stage, x, y):
