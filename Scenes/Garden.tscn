@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://c4wmk5e07a2oj"]
+[gd_scene format=3 uid="uid://c4wmk5e07a2oj"]
 
 [ext_resource type="Texture2D" uid="uid://mf0igc5y1xff" path="res://Sprites/Flowers/SunFlower/sunflower.png" id="2_m3i3o"]
 [ext_resource type="Script" uid="uid://b4qcmbhrbudk5" path="res://Scripts/UI/ui_manager.gd" id="2_wa1tm"]
@@ -14,14 +14,12 @@ texture = ExtResource("3_gscdv")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(0, -8)
-1:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ytob4"]
 texture = ExtResource("4_o3d2i")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/texture_origin = Vector2i(0, -8)
-1:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_0205m"]
 tile_shape = 1
@@ -89,7 +87,6 @@ func _on_buy_cabbage_pressed():
 
 [node name="Earth" type="TileMapLayer" parent="TileMaps" unique_id=1082907088]
 rotation = 0.0012951441
-tile_map_data = PackedByteArray("AAALAP7/AQAAAAAAAAAMAP3/AQAAAAAAAAANAPz/AQAAAAAAAAAOAPv/AQAAAAAAAAAOAPz/AQAAAAAAAAAOAP3/AQAAAAAAAAAOAP7/AQAAAAAAAAAOAP//AQAAAAAAAAAOAAAAAQAAAAAAAAANAAAAAQAAAAAAAAANAAEAAQAAAAAAAAAOAAEAAQAAAAAAAAAOAAMAAQAAAAAAAAAOAAIAAQAAAAAAAAAKAP//AQAAAAAAAAAJAAAAAQAAAAAAAAAIAAEAAQAAAAAAAAAJAAEAAQAAAAAAAAAJAAIAAQAAAAAAAAAKAAIAAQAAAAAAAAAKAAMAAQAAAAAAAAALAAQAAQAAAAAAAAAMAAQAAQAAAAAAAAAMAAUAAQAAAAAAAAANAAQAAQAAAAAAAAANAAMAAQAAAAAAAAANAAIAAQAAAAAAAAANAP//AQAAAAAAAAAMAP//AQAAAAAAAAANAP7/AQAAAAAAAAANAP3/AQAAAAAAAAAMAP7/AQAAAAAAAAAMAAAAAQAAAAAAAAALAAAAAQAAAAAAAAALAAEAAQAAAAAAAAAKAAEAAQAAAAAAAAAKAAAAAQAAAAAAAAALAP//AQAAAAAAAAALAAIAAQAAAAAAAAALAAMAAQAAAAAAAAAMAAIAAQAAAAAAAAAMAAEAAQAAAAAAAAAMAAMAAQAAAAAAAAAPAPz/AQAAAAAAAAAQAP3/AQAAAAAAAAARAP7/AQAAAAAAAAASAP//AQAAAAAAAAA=")
 tile_set = SubResource("TileSet_0205m")
 rendering_quadrant_size = 32
 physics_quadrant_size = 32

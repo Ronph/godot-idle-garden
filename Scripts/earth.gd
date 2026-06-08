@@ -10,10 +10,6 @@ var tile
 @onready var flowers: TileMapLayer = $"../Flowers"
 
 func _ready():
-	# Initialise dictionary for every tile containing current name of flower and growth level
-	#for y in gridWidth:
-	#	for x in gridHeight:
-	#		tileDic[str(Vector2i(x,y))] = ["", -1]
 	var x = 0
 	var y = 0
 	var itterations
@@ -42,7 +38,7 @@ func _ready():
 
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	tile = local_to_map(get_global_mouse_position())
 	
 	# erase all hover border selection to give the illusion of hovering
