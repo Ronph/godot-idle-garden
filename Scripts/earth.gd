@@ -1,8 +1,8 @@
 extends TileMapLayer
 
-var gridWidth = 7
-var gridHeight = 5
-var startPoint = [8,1]
+var gridWidth = 9
+var gridHeight = 9
+var startPoint = [9,-4]
 
 var tileDic = {}
 var tile
@@ -10,29 +10,10 @@ var tile
 @onready var flowers: TileMapLayer = $"../Flowers"
 
 func _ready():
-	var x = 0
-	var y = 0
-	var itterations
-	
 	# Initialise the first half of the tiles
-	for i in range(1, gridWidth + 1):
-		itterations = i + (i-1)
-		if itterations > (1 + (gridHeight-1) * 2):
-			itterations = 1 + (gridHeight-1) * 2
-		
-		x = startPoint[0] + (i - 1)
-		y = startPoint[1] - (i-1)
-		
-		for j in itterations:
-			tileDic[str(Vector2i(x, y + j))] = ["", -1, x, y + j]
-	
-	# Initialise the second half of the tiles
-	for i in range(x + 1, x + gridHeight):
-		itterations = itterations - 2
-		y = y + 1
-		for j in itterations:
-			tileDic[str(Vector2i(i, y + j))] = ["", -1, i, y + j]
-	
+	for x in gridWidth:
+		for y in gridHeight:
+			tileDic[str(Vector2i(startPoint[0] + x, startPoint[1] + y))] = ["", -1, startPoint[0] + x, startPoint[1] + y]
 	
 	reset_tiles()
 
