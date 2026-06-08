@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bnik8hsy5c2o7" path="res://Sprites/earth_hover 32 x32.png" id="3_gscdv"]
 [ext_resource type="Texture2D" uid="uid://0uywekhf00h3" path="res://Sprites/earth 32x32.png" id="4_o3d2i"]
 [ext_resource type="Texture2D" uid="uid://dsimpdo3kbeev" path="res://Sprites/UI/Coin/coin.png" id="5_20tfy"]
-[ext_resource type="Texture2D" uid="uid://dcm2uc7k8a878" path="res://Sprites/Flowers/Cabbage/Cabbage.png" id="5_0205m"]
+[ext_resource type="Texture2D" uid="uid://biowupmpj0myd" path="res://Sprites/Flowers/Cabbage/cabbage.png" id="5_0205m"]
 [ext_resource type="Script" uid="uid://lb3mbbvk1vva" path="res://Scripts/flowers.gd" id="5_gscdv"]
 [ext_resource type="Script" uid="uid://df2yce2d43n8i" path="res://Scripts/earth.gd" id="6_o3d2i"]
 [ext_resource type="Script" path="res://Scripts/UI/Shop.gd" id="8_o3d2i"]
@@ -51,16 +51,15 @@ texture_region_size = Vector2i(16, 32)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ve2dw"]
 texture = ExtResource("5_0205m")
-margins = Vector2i(13, 0)
-texture_region_size = Vector2i(32, 32)
-0:7/0 = 0
-0:7/0/texture_origin = Vector2i(0, 16)
-0:1/0 = 0
-0:1/0/texture_origin = Vector2i(0, 16)
-0:3/0 = 0
-0:3/0/texture_origin = Vector2i(0, 16)
-0:5/0 = 0
-0:5/0/texture_origin = Vector2i(0, 16)
+texture_region_size = Vector2i(32, 25)
+1:0/0 = 0
+1:0/0/texture_origin = Vector2i(0, 12)
+2:0/0 = 0
+2:0/0/texture_origin = Vector2i(0, 12)
+3:0/0 = 0
+3:0/0/texture_origin = Vector2i(0, 12)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 12)
 
 [sub_resource type="TileSet" id="TileSet_gscdv"]
 tile_shape = 1

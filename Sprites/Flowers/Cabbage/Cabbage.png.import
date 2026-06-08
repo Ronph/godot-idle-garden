@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcm2uc7k8a878"
-path="res://.godot/imported/Cabbage.png-7a28d5423a2caa5697db9182bb80d571.ctex"
+uid="uid://biowupmpj0myd"
+path="res://.godot/imported/cabbage.png-222e1cb37c363964a8460e25e5b79136.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Flowers/Cabbage/Cabbage.png"
-dest_files=["res://.godot/imported/Cabbage.png-7a28d5423a2caa5697db9182bb80d571.ctex"]
+source_file="res://Sprites/Flowers/Cabbage/cabbage.png"
+dest_files=["res://.godot/imported/cabbage.png-222e1cb37c363964a8460e25e5b79136.ctex"]
 
 [params]
 
