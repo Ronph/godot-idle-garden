@@ -5,7 +5,9 @@ signal gained_coins(int)
 var coins : int
 var unlocked_flowers: Array = ["Sunflower"]
 
-
+var flowerDic = {"SunFlower": [0, 6, 1, 0], #Sunflower, at position 0 in the list, with 5 growth stages, sell price
+				 "Cabbage": [1, 4, 2, 5]} 
+				
 var currentFlower = "SunFlower"
 func unlock_flower(flower:String, cost:int):
 	if coins >= cost and flower not in unlocked_flowers:

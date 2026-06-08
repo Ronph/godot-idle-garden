@@ -109,23 +109,6 @@ offset_right = 149.0
 offset_bottom = 34.0
 text = "SHOP"
 
-[node name="ShopPanel" type="Panel" parent="UIManager" unique_id=37663772]
-offset_right = 91.0
-offset_bottom = 70.0
-
-[node name="VBoxContainer" type="VBoxContainer" parent="UIManager/ShopPanel" unique_id=1440626707]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="geButton" type="Button" parent="UIManager/ShopPanel/VBoxContainer" unique_id=1076190731]
-layout_mode = 2
-text = "Sunflower"
-
-[node name="caButton" type="Button" parent="UIManager/ShopPanel/VBoxContainer" unique_id=1359865363]
-layout_mode = 2
-text = "Cabbage"
-
 [node name="VBoxContainer" type="VBoxContainer" parent="UIManager" unique_id=1018333093]
 anchors_preset = 6
 anchor_left = 1.0
@@ -161,7 +144,5 @@ offset_bottom = 23.0
 position = Vector2(224, 112)
 
 [connection signal="pressed" from="UIManager/ShopButton" to="UIManager" method="_on_shop_button_pressed"]
-[connection signal="pressed" from="UIManager/ShopPanel/VBoxContainer/geButton" to="UIManager" method="_on_sunflower_button_pressed"]
-[connection signal="pressed" from="UIManager/ShopPanel/VBoxContainer/caButton" to="UIManager" method="_on_cabbage_button_pressed"]
 [connection signal="pressed" from="UIManager/VBoxContainer/Plant_button" to="UIManager" method="_on_plant_button_pressed"]
 [connection signal="pressed" from="UIManager/VBoxContainer/Water_button" to="UIManager" method="_on_water_button_pressed"]
