@@ -1,8 +1,1 @@
-{
-	"gold": 6.0,
-	"time": 0.0,
-	"unlocks": [
-		"Sunflower",
-		"Cabbage"
-	]
-}
+{"gold":0,"time":0,"unlocks":["Sunflower"]}

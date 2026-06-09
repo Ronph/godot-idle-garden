@@ -12,5 +12,5 @@ func _process(_delta: float) -> void:
 	pass
 
 func _exit_tree() -> void:
-	print("EXIT")
+	print("SAVING")
 	save_manager.save_game(GameManager.get_data())
