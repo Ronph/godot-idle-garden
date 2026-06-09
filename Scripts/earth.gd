@@ -1,8 +1,8 @@
 extends TileMapLayer
 
-var gridWidth = 9
-var gridHeight = 9
-var startPoint = [9,-4]
+var gridWidth = 7
+var gridHeight = 7
+var startPoint = [10,-3]
 
 var tileDic = {}
 var tile
