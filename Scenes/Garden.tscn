@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://c4wmk5e07a2oj"]
 
+[ext_resource type="Script" uid="uid://dbsbqv3rrwxg4" path="res://Scripts/garden_main.gd" id="1_0205m"]
 [ext_resource type="Texture2D" uid="uid://mf0igc5y1xff" path="res://Sprites/Flowers/SunFlower/sunflower.png" id="2_m3i3o"]
 [ext_resource type="Script" uid="uid://b4qcmbhrbudk5" path="res://Scripts/UI/ui_manager.gd" id="2_wa1tm"]
 [ext_resource type="Texture2D" uid="uid://bnik8hsy5c2o7" path="res://Sprites/earth_hover 32 x32.png" id="3_gscdv"]
@@ -67,6 +68,7 @@ sources/0 = SubResource("TileSetAtlasSource_nw5gq")
 sources/1 = SubResource("TileSetAtlasSource_ve2dw")
 
 [node name="Garden" type="Node2D" unique_id=760420180]
+script = ExtResource("1_0205m")
 
 [node name="TileMaps" type="Node" parent="." unique_id=729581561]
 

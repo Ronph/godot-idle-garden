@@ -12,6 +12,7 @@ func update_coin_display(total):
 
 
 func _on_returnShop_button_pressed():
+	save_manager.save_game(GameManager.get_data())
 	get_tree().change_scene_to_file("res://Scenes/Garden.tscn")
 
 
