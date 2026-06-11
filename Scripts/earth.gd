@@ -10,7 +10,6 @@ var tile
 @onready var flowers: TileMapLayer = $"../Flowers"
 
 func _ready():
-	# Initialise the first half of the tiles
 	for x in gridWidth:
 		for y in gridHeight:
 			tileDic[str(Vector2i(startPoint[0] + x, startPoint[1] + y))] = ["", -1, startPoint[0] + x, startPoint[1] + y]
@@ -29,9 +28,8 @@ func _process(_delta: float) -> void:
 	if tileDic.has(str(tile)):
 		set_cell(tile, 0, Vector2i(0, 0), 0)
 		
-		#if Input.is_action_just_pressed("leftClick"):
-			#var nameStage = flowers.place_flower(tile, tileDic[str(tile)][0], tileDic[str(tile)][1] + 1, tileDic[str(tile)][2], tileDic[str(tile)][3])
-			#tileDic[str(tile)] = nameStage
+		if Input.is_action_just_pressed("leftClick"):
+			tileDic[str(tile)] = flowers.harvest_flower(tile, tileDic[str(tile)][0], tileDic[str(tile)][1], tileDic[str(tile)][2], tileDic[str(tile)][3])
 
 
 func plant():
@@ -78,7 +76,3 @@ func water():
 func reset_tiles():
 	for i in tileDic.keys():
 			set_cell(Vector2i(tileDic[i][2], tileDic[i][3]), 1, Vector2i(0, 0), 0)
-
-
-func _on_shop_button_pressed() -> void:
-	pass # Replace with function body.
