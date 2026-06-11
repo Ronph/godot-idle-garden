@@ -1,0 +1,150 @@
+[gd_scene format=3 uid="uid://c4wmk5e07a2oj"]
+
+[ext_resource type="Script" uid="uid://dbsbqv3rrwxg4" path="res://Scripts/garden_main.gd" id="1_0205m"]
+[ext_resource type="Texture2D" uid="uid://mf0igc5y1xff" path="res://Sprites/Flowers/SunFlower/sunflower.png" id="2_m3i3o"]
+[ext_resource type="Script" uid="uid://b4qcmbhrbudk5" path="res://Scripts/UI/ui_manager.gd" id="2_wa1tm"]
+[ext_resource type="Texture2D" uid="uid://bnik8hsy5c2o7" path="res://Sprites/earth_hover 32 x32.png" id="3_gscdv"]
+[ext_resource type="Texture2D" uid="uid://0uywekhf00h3" path="res://Sprites/earth 32x32.png" id="4_o3d2i"]
+[ext_resource type="Texture2D" uid="uid://dsimpdo3kbeev" path="res://Sprites/UI/Coin/coin.png" id="5_20tfy"]
+[ext_resource type="Texture2D" uid="uid://biowupmpj0myd" path="res://Sprites/Flowers/Cabbage/Cabbage.png" id="5_0205m"]
+[ext_resource type="Script" uid="uid://lb3mbbvk1vva" path="res://Scripts/flowers.gd" id="5_gscdv"]
+[ext_resource type="Script" uid="uid://df2yce2d43n8i" path="res://Scripts/earth.gd" id="6_o3d2i"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0205m"]
+texture = ExtResource("3_gscdv")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, -8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ytob4"]
+texture = ExtResource("4_o3d2i")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, -8)
+
+[sub_resource type="TileSet" id="TileSet_0205m"]
+tile_shape = 1
+tile_layout = 5
+tile_offset_axis = 1
+tile_size = Vector2i(32, 16)
+sources/1 = SubResource("TileSetAtlasSource_ytob4")
+sources/0 = SubResource("TileSetAtlasSource_0205m")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nw5gq"]
+texture = ExtResource("2_m3i3o")
+texture_region_size = Vector2i(16, 32)
+3:0/0 = 0
+3:0/0/texture_origin = Vector2i(0, 16)
+4:0/0 = 0
+4:0/0/texture_origin = Vector2i(0, 16)
+5:0/0 = 0
+5:0/0/texture_origin = Vector2i(0, 16)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 16)
+0:0/0/y_sort_origin = 14
+1:0/0 = 0
+1:0/0/texture_origin = Vector2i(0, 16)
+2:0/0 = 0
+2:0/0/texture_origin = Vector2i(0, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ve2dw"]
+texture = ExtResource("5_0205m")
+texture_region_size = Vector2i(32, 25)
+1:0/0 = 0
+1:0/0/texture_origin = Vector2i(0, 12)
+2:0/0 = 0
+2:0/0/texture_origin = Vector2i(0, 12)
+3:0/0 = 0
+3:0/0/texture_origin = Vector2i(0, 12)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 12)
+
+[sub_resource type="TileSet" id="TileSet_gscdv"]
+tile_shape = 1
+tile_layout = 5
+tile_offset_axis = 1
+tile_size = Vector2i(32, 16)
+sources/0 = SubResource("TileSetAtlasSource_nw5gq")
+sources/1 = SubResource("TileSetAtlasSource_ve2dw")
+
+[node name="Garden" type="Node2D" unique_id=760420180]
+script = ExtResource("1_0205m")
+
+[node name="TileMaps" type="Node" parent="." unique_id=729581561]
+
+[node name="Earth" type="TileMapLayer" parent="TileMaps" unique_id=1082907088]
+rotation = 0.0012951441
+tile_set = SubResource("TileSet_0205m")
+rendering_quadrant_size = 32
+physics_quadrant_size = 32
+script = ExtResource("6_o3d2i")
+
+[node name="Flowers" type="TileMapLayer" parent="TileMaps" unique_id=173931164]
+tile_set = SubResource("TileSet_gscdv")
+script = ExtResource("5_gscdv")
+
+[node name="UIManager" type="CanvasLayer" parent="." unique_id=1152060625]
+script = ExtResource("2_wa1tm")
+
+[node name="TextureRect" type="TextureRect" parent="UIManager" unique_id=1130866542]
+offset_left = 246.0
+offset_top = -243.0
+offset_right = 646.0
+offset_bottom = 297.0
+texture = ExtResource("5_20tfy")
+
+[node name="CoinCount" type="Label" parent="UIManager" unique_id=77309131]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 178.0
+offset_right = 188.0
+offset_bottom = 23.00003
+grow_horizontal = 2
+text = "0"
+horizontal_alignment = 2
+
+[node name="ShopButton" type="Button" parent="UIManager" unique_id=728489337]
+offset_left = 97.0
+offset_top = 3.0
+offset_right = 149.0
+offset_bottom = 34.0
+text = "SHOP"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UIManager" unique_id=1018333093]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -55.0
+offset_top = -33.0
+offset_bottom = 33.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Plant_button" type="Button" parent="UIManager/VBoxContainer" unique_id=1021713783]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Plant"
+
+[node name="Water_button" type="Button" parent="UIManager/VBoxContainer" unique_id=772637789]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Water
+"
+
+[node name="Label" type="Label" parent="." unique_id=223644544]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1647965446]
+position = Vector2(224, 112)
+
+[connection signal="pressed" from="UIManager/ShopButton" to="UIManager" method="_on_shop_button_pressed"]
+[connection signal="pressed" from="UIManager/VBoxContainer/Plant_button" to="UIManager" method="_on_plant_button_pressed"]
+[connection signal="pressed" from="UIManager/VBoxContainer/Water_button" to="UIManager" method="_on_water_button_pressed"]
