@@ -74,6 +74,7 @@ script = ExtResource("1_0205m")
 
 [node name="Earth" type="TileMapLayer" parent="TileMaps" unique_id=1082907088]
 rotation = 0.0012951441
+tile_map_data = PackedByteArray(0, 0, 13, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 12, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 14, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 13, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 13, 0, 255, 255, 1, 0, 0, 0, 0, 0, 0, 0)
 tile_set = SubResource("TileSet_0205m")
 rendering_quadrant_size = 32
 physics_quadrant_size = 32
