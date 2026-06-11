@@ -29,10 +29,6 @@ func _process(_delta: float) -> void:
 		set_cell(tile, 0, Vector2i(0, 0), 0)
 		
 		if Input.is_action_just_pressed("leftClick"):
-			var flowName = tileDic[str(tile)][0]
-			var stage = tileDic[str(tile)][1]
-			var flowKey = tileDic.keys()
-			
 			callHarvest(tile)
 
 			#this is high-key ugly as fuck but idk what else to do lmao
@@ -42,13 +38,13 @@ func _process(_delta: float) -> void:
 				callHarvest(Vector2i(tile.x, tile.y-1))
 				callHarvest(Vector2i(tile.x, tile.y+1))
 
-func callHarvest(tile):
-	if str(tile) in tileDic.keys():
-		var flowName = tileDic[str(tile)][0]
-		var stage = tileDic[str(tile)][1]
-		var x = tileDic[str(tile)][2]
-		var y = tileDic[str(tile)][3]
-		tileDic[str(tile)] = flowers.harvest_flower(tile, flowName, stage, x, y)
+func callHarvest(currTile):
+	if str(currTile) in tileDic.keys():
+		var flowName = tileDic[str(currTile)][0]
+		var stage = tileDic[str(currTile)][1]
+		var x = tileDic[str(currTile)][2]
+		var y = tileDic[str(currTile)][3]
+		tileDic[str(currTile)] = flowers.harvest_flower(currTile, flowName, stage, x, y)
 		
 func plant():
 	var lookingForFree = true
