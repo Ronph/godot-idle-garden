@@ -18,8 +18,8 @@ offset_bottom = 133.0
 
 [node name="UpgradeNode2" parent="." unique_id=1753605244 instance=ExtResource("1_4gaae")]
 layout_mode = 0
-offset_left = 161.0
-offset_top = 197.0
-offset_right = 201.0
-offset_bottom = 237.0
+offset_left = 186.0
+offset_top = 245.0
+offset_right = 226.0
+offset_bottom = 285.0
 data = ExtResource("2_jh00n")

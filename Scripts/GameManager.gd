@@ -1,7 +1,7 @@
 extends Node
 
 signal gained_coins(int)
-
+signal state_changed
 var coins : int = 100
 var unlocked_flowers: Array = ["Sunflower"]
 var unlocked_upgrades: Array = []
@@ -11,6 +11,7 @@ var flowerDic = {"Sunflower": [0, 6, 1, 0], #Sunflower, at position 0 in the lis
 				 "Cabbage": [1, 4, 2, 5]} 
 				
 var currentFlower = "Sunflower"
+
 
 
 func unlock_flower(flower:String, cost:int):
@@ -35,6 +36,7 @@ func try_purchase(data: UpgradeData):
 			basketSize += data.increase_basket_size
 			unlocked_upgrades.append(data.display_name)
 	print(unlocked_flowers, unlocked_upgrades, coins,harvestSize)
+	state_changed.emit()
 	return true
 		
 
