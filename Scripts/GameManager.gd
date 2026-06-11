@@ -4,6 +4,7 @@ signal gained_coins(int)
 
 var coins : int
 var unlocked_flowers: Array = ["Sunflower"]
+var harvestSize = 5
 
 var flowerDic = {"Sunflower": [0, 6, 1, 0], #Sunflower, at position 0 in the list, with 5 growth stages, sell price
 				 "Cabbage": [1, 4, 2, 5]} 
