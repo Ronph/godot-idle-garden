@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://by8ih3dpa2h7e"]
+
+[ext_resource type="PackedScene" uid="uid://d31lk1oq4xc11" path="res://Scenes/upgrade_node.tscn" id="1_4gaae"]
+[ext_resource type="Resource" uid="uid://d2tg5xen2q0qk" path="res://Sprites/UpgradeTree/Test2.tres" id="2_jh00n"]
+
+[node name="UpgradeScene" type="Control" unique_id=1354934309]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="UpgradeNode" parent="." unique_id=1122517123 instance=ExtResource("1_4gaae")]
+layout_mode = 0
+offset_left = 163.0
+offset_top = 93.0
+offset_right = 203.0
+offset_bottom = 133.0
+
+[node name="UpgradeNode2" parent="." unique_id=1753605244 instance=ExtResource("1_4gaae")]
+layout_mode = 0
+offset_left = 161.0
+offset_top = 197.0
+offset_right = 201.0
+offset_bottom = 237.0
+data = ExtResource("2_jh00n")
