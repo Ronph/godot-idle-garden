@@ -5,7 +5,7 @@ signal state_changed
 var coins : int = 100
 var unlocked_flowers: Array = ["Sunflower"]
 var unlocked_upgrades: Array = []
-var harvestSize = 5
+var harvestSize = 1
 var basketSize = 10
 var flowerDic = {"Sunflower": [0, 6, 1, 0], #Sunflower, at position 0 in the list, with 5 growth stages, sell price
 				 "Cabbage": [1, 4, 2, 5]} 
@@ -32,10 +32,10 @@ func try_purchase(data: UpgradeData):
 		if data.is_flower:
 			unlocked_flowers.append(data.display_name)
 		else:
-			harvestSize += data.increase_harvest_size
-			basketSize += data.increase_basket_size
+			harvestSize = data.increase_harvest_size
+			basketSize = data.increase_basket_size
 			unlocked_upgrades.append(data.display_name)
-	print(unlocked_flowers, unlocked_upgrades, coins,harvestSize)
+	print(unlocked_flowers, unlocked_upgrades, "coins: ", coins, ", harvest size: ",harvestSize)
 	state_changed.emit()
 	return true
 		
