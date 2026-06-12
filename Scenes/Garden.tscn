@@ -10,7 +10,7 @@
 [ext_resource type="Script" uid="uid://lb3mbbvk1vva" path="res://Scripts/flowers.gd" id="5_gscdv"]
 [ext_resource type="Script" uid="uid://df2yce2d43n8i" path="res://Scripts/earth.gd" id="6_o3d2i"]
 [ext_resource type="Texture2D" uid="uid://csl57eplrok4h" path="res://Sprites/UI/TestUI/freefantasy.png" id="10_ytob4"]
-[ext_resource type="Texture2D" uid="uid://ci70n756b13j5" path="res://Sprites/Test/ground/Tilesets/Objects/Egg item.png" id="11_e5ced"]
+[ext_resource type="Texture2D" uid="uid://bxowt8cgubxwc" path="res://Sprites/UI/TestUI/PlaceholderBasket.png" id="11_amql2"]
 [ext_resource type="Script" uid="uid://3q6rxcosrf0s" path="res://Scenes/basket_ui.gd" id="12_amql2"]
 [ext_resource type="Script" uid="uid://ccs7741nhj1ga" path="res://Scenes/sell_area.gd" id="13_amql2"]
 
@@ -184,7 +184,7 @@ offset_top = 205.0
 offset_right = 517.0
 offset_bottom = 245.0
 mouse_filter = 0
-texture = ExtResource("11_e5ced")
+texture = ExtResource("11_amql2")
 script = ExtResource("12_amql2")
 
 [node name="SellArea" type="Control" parent="UIManager" unique_id=377821405]

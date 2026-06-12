@@ -1,13 +1,13 @@
 [gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://by5v7l8iyrox7"]
 
-[ext_resource type="Texture2D" uid="uid://c2aigicgcmm0o" path="res://Sprites/UI/TestUI/sytche.png" id="1_11aks"]
+[ext_resource type="Texture2D" uid="uid://c2aigicgcmm0o" path="res://Sprites/UpgradeTree/sytche.png" id="1_11aks"]
 [ext_resource type="Script" uid="uid://beqe0cpuetk5w" path="res://Scripts/UI/upgrade_data.gd" id="2_aamod"]
 
 [resource]
 script = ExtResource("2_aamod")
-display_name = "Cabbage"
-is_flower = true
+display_name = "Scythe"
 upgrade_cost = 5
-description = "Is a Cabbage"
+description = "Increase Harvest Size"
+increase_harvest_size = 1
 icon = ExtResource("1_11aks")
 metadata/_custom_type_script = "uid://beqe0cpuetk5w"

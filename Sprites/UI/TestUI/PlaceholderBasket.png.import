@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://datmmkffeu18x"
-path="res://.godot/imported/upgrade2.png-141f6d3b8195c6078b7bef149e2cc430.ctex"
+uid="uid://bxowt8cgubxwc"
+path="res://.godot/imported/PlaceholderBasket.png-7bf10293a33f19ca62b8c34cf1bc6045.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UpgradeTree/upgrade2.png"
-dest_files=["res://.godot/imported/upgrade2.png-141f6d3b8195c6078b7bef149e2cc430.ctex"]
+source_file="res://Sprites/UI/TestUI/PlaceholderBasket.png"
+dest_files=["res://.godot/imported/PlaceholderBasket.png-7bf10293a33f19ca62b8c34cf1bc6045.ctex"]
 
 [params]
 

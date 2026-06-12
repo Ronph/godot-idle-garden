@@ -10,7 +10,9 @@ func refresh():
 	else:
 		modulate = Color(1,1,1,0.4)
 func _ready():
-	points = [from_button.position + from_button.size / 2,to_button.position + from_button.size]
-	print(GameManager.unlocked_flowers)
+	assert(from_button and to_button and data,
+		"ConnectionLine '%s' (parent: %s) missing exports!" % [name, get_parent().name])
+	points = [from_button.position + from_button.size / 2,to_button.position + to_button.size]
+	
 	GameManager.state_changed.connect(refresh)
 	refresh()

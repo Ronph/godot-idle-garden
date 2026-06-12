@@ -4,6 +4,7 @@
 [ext_resource type="Resource" uid="uid://d2tg5xen2q0qk" path="res://Sprites/UpgradeTree/Test2.tres" id="2_jh00n"]
 [ext_resource type="PackedScene" uid="uid://ngv60e1cr0pk" path="res://Scenes/connection_line.tscn" id="3_jbf0j"]
 [ext_resource type="Resource" uid="uid://by5v7l8iyrox7" path="res://Sprites/UpgradeTree/Harvest.tres" id="4_ictkm"]
+[ext_resource type="Resource" uid="uid://cn245bp16mxhu" path="res://Sprites/UpgradeTree/Scythe2.tres" id="5_ictkm"]
 
 [node name="UpgradeScene" type="Control" unique_id=1354934309]
 layout_mode = 3
@@ -11,7 +12,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="UpgradeNode" parent="." unique_id=1122517123 instance=ExtResource("1_4gaae")]
+[node name="Cabbage" parent="." unique_id=1122517123 instance=ExtResource("1_4gaae")]
 layout_mode = 0
 offset_left = 163.0
 offset_top = 93.0
@@ -19,16 +20,30 @@ offset_right = 203.0
 offset_bottom = 133.0
 data = ExtResource("2_jh00n")
 
-[node name="UpgradeNode2" parent="." unique_id=1753605244 instance=ExtResource("1_4gaae")]
+[node name="ScytheUp" parent="." unique_id=1753605244 instance=ExtResource("1_4gaae")]
 layout_mode = 0
-offset_left = 261.0
-offset_top = 232.0
-offset_right = 301.0
-offset_bottom = 272.0
+offset_left = 1.0
+offset_top = 43.0
+offset_right = 41.0
+offset_bottom = 83.0
 data = ExtResource("4_ictkm")
 
 [node name="connection_lines" parent="." unique_id=1280575670 node_paths=PackedStringArray("from_button", "to_button") instance=ExtResource("3_jbf0j")]
 points = PackedVector2Array(239, 105)
+width = 2.0
 data = ExtResource("4_ictkm")
-from_button = NodePath("../UpgradeNode")
-to_button = NodePath("../UpgradeNode2")
+from_button = NodePath("../Scythe1Up")
+to_button = NodePath("../ScytheUp")
+
+[node name="Scythe1Up" parent="." unique_id=1066811914 instance=ExtResource("1_4gaae")]
+layout_mode = 0
+data = ExtResource("5_ictkm")
+
+[node name="Return Button" type="Button" parent="." unique_id=1560828554]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+text = "To Garden
+"
+
+[connection signal="pressed" from="Return Button" to="Cabbage" method="_on_return_button_pressed"]

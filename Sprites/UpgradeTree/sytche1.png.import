@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bap8i5sh5do3c"
-path="res://.godot/imported/upgrade.png-2f486d95017de4a6fb9cf29ac7ff1d48.ctex"
+uid="uid://i18kapdm3tma"
+path="res://.godot/imported/sytche1.png-36c51af78823e84994577f871b196f41.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UpgradeTree/upgrade.png"
-dest_files=["res://.godot/imported/upgrade.png-2f486d95017de4a6fb9cf29ac7ff1d48.ctex"]
+source_file="res://Sprites/UpgradeTree/sytche1.png"
+dest_files=["res://.godot/imported/sytche1.png-36c51af78823e84994577f871b196f41.ctex"]
 
 [params]
 

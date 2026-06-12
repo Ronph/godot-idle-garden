@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://cn245bp16mxhu"]
+
+[ext_resource type="Script" uid="uid://beqe0cpuetk5w" path="res://Scripts/UI/upgrade_data.gd" id="1_5jayb"]
+[ext_resource type="Texture2D" uid="uid://i18kapdm3tma" path="res://Sprites/UpgradeTree/sytche1.png" id="1_jc827"]
+
+[resource]
+script = ExtResource("1_5jayb")
+display_name = "Sythe2"
+has_flowers = 5
+upgrade_cost = 20
+description = "Increase Farming Size by 2"
+increase_harvest_size = 2
+icon = ExtResource("1_jc827")
+metadata/_custom_type_script = "uid://beqe0cpuetk5w"

@@ -13,6 +13,10 @@ func _ready():
 	texture_normal = data.icon
 	GameManager.state_changed.connect(refresh)
 	refresh()
-	
+
 func _on_pressed():
 	GameManager.try_purchase(data)
+
+
+func _on_return_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/Garden.tscn")
