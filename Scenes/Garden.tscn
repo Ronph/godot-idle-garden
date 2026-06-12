@@ -9,6 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://biowupmpj0myd" path="res://Sprites/Flowers/Cabbage/Cabbage.png" id="5_0205m"]
 [ext_resource type="Script" uid="uid://lb3mbbvk1vva" path="res://Scripts/flowers.gd" id="5_gscdv"]
 [ext_resource type="Script" uid="uid://df2yce2d43n8i" path="res://Scripts/earth.gd" id="6_o3d2i"]
+[ext_resource type="Texture2D" uid="uid://csl57eplrok4h" path="res://Sprites/UI/TestUI/freefantasy.png" id="10_ytob4"]
+[ext_resource type="Texture2D" uid="uid://ci70n756b13j5" path="res://Sprites/Test/ground/Tilesets/Objects/Egg item.png" id="11_e5ced"]
+[ext_resource type="Script" uid="uid://3q6rxcosrf0s" path="res://Scenes/basket_ui.gd" id="12_amql2"]
+[ext_resource type="Script" uid="uid://ccs7741nhj1ga" path="res://Scenes/sell_area.gd" id="13_amql2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0205m"]
 texture = ExtResource("3_gscdv")
@@ -67,6 +71,14 @@ tile_size = Vector2i(32, 16)
 sources/0 = SubResource("TileSetAtlasSource_nw5gq")
 sources/1 = SubResource("TileSetAtlasSource_ve2dw")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ve2dw"]
+texture = ExtResource("10_ytob4")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+region_rect = Rect2(164, 45, 75, 97.5)
+
 [node name="Garden" type="Node2D" unique_id=760420180]
 script = ExtResource("1_0205m")
 
@@ -116,12 +128,13 @@ offset_top = -23.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="ShopButton" type="Button" parent="UIManager" unique_id=728489337]
+[node name="FloraButton" type="Button" parent="UIManager" unique_id=728489337]
 offset_left = 97.0
 offset_top = 3.0
 offset_right = 149.0
 offset_bottom = 34.0
-text = "SHOP"
+theme_override_styles/normal = SubResource("StyleBoxTexture_ve2dw")
+text = "Flora"
 
 [node name="SellButton" type="Button" parent="UIManager" unique_id=277825864]
 anchors_preset = 3
@@ -165,14 +178,34 @@ size_flags_vertical = 4
 text = "Water
 "
 
+[node name="BasketUI" type="TextureRect" parent="UIManager" unique_id=315300259]
+offset_left = 477.0
+offset_top = 205.0
+offset_right = 517.0
+offset_bottom = 245.0
+mouse_filter = 0
+texture = ExtResource("11_e5ced")
+script = ExtResource("12_amql2")
+
+[node name="SellArea" type="Control" parent="UIManager" unique_id=377821405]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 602.0
+offset_top = 284.0
+offset_right = 642.0
+offset_bottom = 315.0
+script = ExtResource("13_amql2")
+
 [node name="Label" type="Label" parent="." unique_id=223644544]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 338.0
+offset_top = 153.0
+offset_right = 378.0
+offset_bottom = 176.0
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1647965446]
 position = Vector2(224, 112)
 
-[connection signal="pressed" from="UIManager/ShopButton" to="UIManager" method="_on_shop_button_pressed"]
+[connection signal="pressed" from="UIManager/FloraButton" to="UIManager" method="_on_shop_button_pressed"]
 [connection signal="pressed" from="UIManager/SellButton" to="UIManager" method="_on_sell_button_pressed"]
 [connection signal="pressed" from="UIManager/VBoxContainer/Plant_button" to="UIManager" method="_on_plant_button_pressed"]
 [connection signal="pressed" from="UIManager/VBoxContainer/Water_button" to="UIManager" method="_on_water_button_pressed"]

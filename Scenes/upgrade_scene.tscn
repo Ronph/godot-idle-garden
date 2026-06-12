@@ -1,7 +1,9 @@
-[gd_scene format=3 uid="uid://dc8a8onrnadt0"]
+[gd_scene format=3 uid="uid://by8ih3dpa2h7e"]
 
-[ext_resource type="PackedScene" path="res://Scenes/upgrade_node.tscn" id="1_4gaae"]
+[ext_resource type="PackedScene" uid="uid://d31lk1oq4xc11" path="res://Scenes/upgrade_node.tscn" id="1_4gaae"]
 [ext_resource type="Resource" uid="uid://d2tg5xen2q0qk" path="res://Sprites/UpgradeTree/Test2.tres" id="2_jh00n"]
+[ext_resource type="PackedScene" uid="uid://ngv60e1cr0pk" path="res://Scenes/connection_line.tscn" id="3_jbf0j"]
+[ext_resource type="Resource" uid="uid://by5v7l8iyrox7" path="res://Sprites/UpgradeTree/Harvest.tres" id="4_ictkm"]
 
 [node name="UpgradeScene" type="Control" unique_id=1354934309]
 layout_mode = 3
@@ -15,11 +17,18 @@ offset_left = 163.0
 offset_top = 93.0
 offset_right = 203.0
 offset_bottom = 133.0
+data = ExtResource("2_jh00n")
 
 [node name="UpgradeNode2" parent="." unique_id=1753605244 instance=ExtResource("1_4gaae")]
 layout_mode = 0
-offset_left = 186.0
-offset_top = 245.0
-offset_right = 226.0
-offset_bottom = 285.0
-data = ExtResource("2_jh00n")
+offset_left = 261.0
+offset_top = 232.0
+offset_right = 301.0
+offset_bottom = 272.0
+data = ExtResource("4_ictkm")
+
+[node name="connection_lines" parent="." unique_id=1280575670 node_paths=PackedStringArray("from_button", "to_button") instance=ExtResource("3_jbf0j")]
+points = PackedVector2Array(239, 105)
+data = ExtResource("4_ictkm")
+from_button = NodePath("../UpgradeNode")
+to_button = NodePath("../UpgradeNode2")

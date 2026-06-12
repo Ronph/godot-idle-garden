@@ -17,7 +17,7 @@ func update_basket_display(total):
 		$BasketCount.text = "Basket: FULL"
 
 func _on_shop_button_pressed():
-	get_tree().change_scene_to_file("res://Scenes/shop.tscn")
+	get_tree().change_scene_to_file("res://Scenes/upgrade_scene.tscn")
 
 
 
