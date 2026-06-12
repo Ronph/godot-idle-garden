@@ -1,13 +1,19 @@
 extends Node
 
 signal gained_coins(int)
+signal basket_filled(int)
 signal state_changed
+
 var coins : int = 100
 var unlocked_flowers: Array = ["Sunflower"]
 var unlocked_upgrades: Array = []
 var harvestSize = 1
+
 var basketSize = 10
-var flowerDic = {"Sunflower": [0, 6, 1, 0], #Sunflower, at position 0 in the list, with 5 growth stages, sell price
+var basketCurrent = 0
+var moneyInBasket = 0
+
+var flowerDic = {"Sunflower": [0, 6, 1, 0], #Sunflower, at position 0 in the list, with 5 growth stages, sell price, unlock price
 				 "Cabbage": [1, 4, 2, 5]} 
 				
 var currentFlower = "Sunflower"
@@ -40,9 +46,12 @@ func try_purchase(data: UpgradeData):
 	return true
 		
 
-func loadData(coin, unlock, _timeSince):
+func loadData(coin, unlock, _timeSince, basketFill):
 	coins = coin
+	basketCurrent = int(basketFill[0])
+	moneyInBasket = int(basketFill[1])
 	emit_signal("gained_coins", coins)
+	emit_signal("basket_filled", basketCurrent)
 	unlocked_flowers = unlock
 
 
@@ -51,6 +60,16 @@ func gain_coins(coins_gained:int):
 	emit_signal("gained_coins", coins)
 	print(coins)
 
+func fillBasket():
+	basketCurrent += 1
+	emit_signal("basket_filled", basketCurrent)
 
 func get_data() -> Dictionary:
-	return {"gold": coins, "unlocks": unlocked_flowers, "time": 0}
+	return {"gold": coins, "unlocks": unlocked_flowers, "time": 0, "basket": [basketCurrent, moneyInBasket]}
+
+func sellBasket():
+	gain_coins(moneyInBasket)
+	moneyInBasket = 0
+	basketCurrent = 0
+	emit_signal("basket_filled", basketCurrent)
+	
