@@ -38,8 +38,11 @@ func try_purchase(data: UpgradeData):
 		if data.is_flower:
 			unlocked_flowers.append(data.display_name)
 		else:
-			harvestSize = data.increase_harvest_size
-			basketSize = data.increase_basket_size
+			if data.increase_harvest_size > 0:
+				harvestSize = data.increase_harvest_size
+			if data.increase_basket_size > 0:
+				basketSize = data.increase_basket_size
+			
 			unlocked_upgrades.append(data.display_name)
 	print(unlocked_flowers, unlocked_upgrades, "coins: ", coins, ", harvest size: ",harvestSize)
 	state_changed.emit()
