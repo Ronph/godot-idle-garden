@@ -29,3 +29,6 @@ func water_random_flower(tile, flowName, stage, x, y):
 		return [flowName, stage, x, y]
 	else:
 		return [flowName, stage - 1, x, y]
+
+func displayFlowers(tile, flowerName, stage):
+	set_cell(tile, GameManager.flowerDic[flowerName][0], Vector2i(stage, 0), 0)

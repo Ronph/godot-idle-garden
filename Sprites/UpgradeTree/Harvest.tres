@@ -10,3 +10,4 @@ is_flower = true
 upgrade_cost = 5
 description = "Is a Cabbage"
 icon = ExtResource("1_11aks")
+metadata/_custom_type_script = "uid://beqe0cpuetk5w"
