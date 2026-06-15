@@ -2,7 +2,7 @@ extends Node
 
 
 const save_file_name: String = "res://garden_save.json"
-const default_dic: Dictionary = {"gold": 0, "unlocks": ["Sunflower"], "time": 0.0, "basket": 0}
+const default_dic: Dictionary = {"gold": 0, "unlocks": ["Sunflower"], "time": 0.0, "basket": 0, "tiles": {}}
 
 func save_game(data: Dictionary):
 	var save_file: FileAccess = FileAccess.open(save_file_name, FileAccess.WRITE)

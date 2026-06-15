@@ -4,19 +4,23 @@ var gridWidth = 7
 var gridHeight = 7
 var startPoint = [10,-3]
 
-var tileDic = {}
 var tile
-
+var tileDic = {}
 @onready var flowers: TileMapLayer = $"../Flowers"
 
-func _ready():
-	for x in gridWidth:
-		for y in gridHeight:
-			tileDic[str(Vector2i(startPoint[0] + x, startPoint[1] + y))] = ["", -1, startPoint[0] + x, startPoint[1] + y]
-	
+
+func startFunc():
+	tileDic = GameManager.tileList
+	if tileDic.is_empty():
+		print("IS EMPTY")
+		for x in gridWidth:
+			for y in gridHeight:
+				tileDic[str(Vector2i(startPoint[0] + x, startPoint[1] + y))] = ["", -1, startPoint[0] + x, startPoint[1] + y]
 	reset_tiles()
-
-
+	for keys in tileDic.keys():
+		if tileDic[keys][0] != "":
+			print(keys)
+			flowers.displayFlowers(Vector2i(tileDic[keys][2], tileDic[keys][3]), tileDic[keys][0], tileDic[keys][1])
 
 func _process(_delta: float) -> void:
 	tile = local_to_map(get_global_mouse_position())
@@ -30,7 +34,7 @@ func _process(_delta: float) -> void:
 		
 		if Input.is_action_just_pressed("leftClick"):
 			callHarvest(tile)
-
+			
 			#this is high-key ugly as fuck but idk what else to do lmao
 			if  GameManager.harvestSize == 5:
 				callHarvest(Vector2i(tile.x-1, tile.y))
@@ -90,3 +94,4 @@ func water():
 func reset_tiles():
 	for i in tileDic.keys():
 			set_cell(Vector2i(tileDic[i][2], tileDic[i][3]), 1, Vector2i(0, 0), 0)
+	GameManager.tileList = tileDic
