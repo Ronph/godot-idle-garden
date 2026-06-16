@@ -1,12 +1,16 @@
 [gd_scene format=3 uid="uid://d31lk1oq4xc11"]
 
 [ext_resource type="Script" uid="uid://cdhsyi6hamc6g" path="res://Scripts/UI/UpgradeNode.gd" id="1_qp6u8"]
-[ext_resource type="Resource" uid="uid://by5v7l8iyrox7" path="res://Sprites/UpgradeTree/Harvest.tres" id="2_dyhh5"]
+[ext_resource type="Script" uid="uid://beqe0cpuetk5w" path="res://Scripts/UI/upgrade_data.gd" id="2_qp6u8"]
+
+[sub_resource type="Resource" id="Resource_dyhh5"]
+script = ExtResource("2_qp6u8")
+metadata/_custom_type_script = "uid://beqe0cpuetk5w"
 
 [node name="UpgradeNode" type="TextureButton" unique_id=1122517123]
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_qp6u8")
-data = ExtResource("2_dyhh5")
+data = SubResource("Resource_dyhh5")
 
 [connection signal="pressed" from="." to="." method="_on_pressed"]
