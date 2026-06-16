@@ -4,8 +4,16 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var dict: Dictionary = save_manager.load_game()
-	GameManager.loadData(dict["gold"], dict["unlocks"], dict["time"], dict["basket"], dict["tiles"])
+	if not GameManager.has_loaded:
+		var dict: Dictionary = save_manager.load_game()
+		GameManager.loadData(
+			dict.get("gold", 0),
+			dict.get("unlocks", ["Sunflower"]),
+			dict.get("time", 0.0),
+			dict.get("basket", [0, 0]),
+			dict.get("tiles", {})
+		)
+		GameManager.has_loaded = true
 	earth.startFunc()
 
 

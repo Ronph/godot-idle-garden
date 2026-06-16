@@ -79,6 +79,13 @@ texture_margin_right = 8.0
 texture_margin_bottom = 8.0
 region_rect = Rect2(164, 45, 75, 97.5)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_amql2"]
+bg_color = Color(0.007843138, 0.007843138, 0.007843138, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [node name="Garden" type="Node2D" unique_id=760420180]
 script = ExtResource("1_0205m")
 
@@ -178,15 +185,6 @@ size_flags_vertical = 4
 text = "Water
 "
 
-[node name="BasketUI" type="TextureRect" parent="UIManager" unique_id=315300259]
-offset_left = 477.0
-offset_top = 205.0
-offset_right = 517.0
-offset_bottom = 245.0
-mouse_filter = 0
-texture = ExtResource("11_amql2")
-script = ExtResource("12_amql2")
-
 [node name="SellArea" type="Control" parent="UIManager" unique_id=377821405]
 layout_mode = 3
 anchors_preset = 0
@@ -195,6 +193,74 @@ offset_top = 284.0
 offset_right = 642.0
 offset_bottom = 315.0
 script = ExtResource("13_amql2")
+
+[node name="BasketBar" type="HBoxContainer" parent="UIManager" unique_id=969582256]
+offset_left = 382.0
+offset_top = 234.0
+offset_right = 546.0
+offset_bottom = 270.0
+theme_override_constants/separation = 12
+
+[node name="Slot1" type="Panel" parent="UIManager/BasketBar" unique_id=634902441]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_amql2")
+
+[node name="BasketUI" type="TextureRect" parent="UIManager/BasketBar/Slot1" unique_id=315300259]
+layout_mode = 0
+offset_left = -4.0
+offset_top = -3.0
+offset_right = 36.0
+offset_bottom = 37.0
+mouse_filter = 0
+texture = ExtResource("11_amql2")
+expand_mode = 1
+script = ExtResource("12_amql2")
+
+[node name="Slot2" type="Panel" parent="UIManager/BasketBar" unique_id=1053459988]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_amql2")
+
+[node name="BasketUI" type="TextureRect" parent="UIManager/BasketBar/Slot2" unique_id=121383634]
+layout_mode = 0
+offset_left = -4.0
+offset_top = -2.0
+offset_right = 36.0
+offset_bottom = 38.0
+mouse_filter = 0
+texture = ExtResource("11_amql2")
+script = ExtResource("12_amql2")
+
+[node name="Slot3" type="Panel" parent="UIManager/BasketBar" unique_id=1585168927]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_amql2")
+
+[node name="BasketUI" type="TextureRect" parent="UIManager/BasketBar/Slot3" unique_id=2061917082]
+layout_mode = 0
+offset_left = -4.0
+offset_top = -3.0
+offset_right = 36.0
+offset_bottom = 37.0
+mouse_filter = 0
+texture = ExtResource("11_amql2")
+script = ExtResource("12_amql2")
+
+[node name="Slot4" type="Panel" parent="UIManager/BasketBar" unique_id=493984095]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_amql2")
+
+[node name="BasketUI" type="TextureRect" parent="UIManager/BasketBar/Slot4" unique_id=339001205]
+layout_mode = 0
+offset_left = -4.0
+offset_top = -2.0
+offset_right = 36.0
+offset_bottom = 38.0
+mouse_filter = 0
+texture = ExtResource("11_amql2")
+script = ExtResource("12_amql2")
 
 [node name="Label" type="Label" parent="." unique_id=223644544]
 offset_left = 338.0

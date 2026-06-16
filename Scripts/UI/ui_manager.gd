@@ -10,8 +10,8 @@ func _ready():
 func update_coin_display(total):
 	$CoinCount.text = str(total)
 
-func update_basket_display(total):
-	if GameManager.basketCurrent < GameManager.basketSize:
+func update_basket_display(index, total):
+	if GameManager.basketCurrent[index] < GameManager.basketSize[index]:
 		$BasketCount.text = "Basket: " + str(total)
 	else:
 		$BasketCount.text = "Basket: FULL"
@@ -30,4 +30,4 @@ func _on_water_button_pressed() -> void:
 
 
 func _on_sell_button_pressed() -> void:
-	GameManager.sellBasket()
+	GameManager.sellBasket(0)

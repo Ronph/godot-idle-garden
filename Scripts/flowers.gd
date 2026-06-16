@@ -4,15 +4,13 @@ var currentFlower : String:
 	get: return GameManager.currentFlower # default flower (we will add code later on to change the current default)
 
 func harvest_flower(tile, flowName, stage, x, y):
-	if flowName == "":
+	if flowName == "":	
 		return [flowName, stage, x, y]
 	if stage == GameManager.flowerDic[flowName][1] - 1:
 		# if the basket has room then we can harvest, otherwise we do nothing
-		if GameManager.basketCurrent < GameManager.basketSize:
+		if GameManager.first_open_basket() != -1:
 			erase_cell(tile)
-			# GameManager.gain_coins(GameManager.flowerDic[flowName][2])
-			GameManager.fillBasket()
-			GameManager.moneyInBasket += GameManager.flowerDic[flowName][2]
+			GameManager.fillBasket(GameManager.flowerDic[flowName][2])
 			return ["", -1, x, y]
 		else:
 			return [flowName, stage, x, y]

@@ -30,7 +30,7 @@ func load_game() -> Dictionary:
 			return data
 		else:
 			push_error("Corrupted save data")
-	return default_dic
+	return default_dic.duplicate(true)
 
 func reset_save():
 	save_game(default_dic)

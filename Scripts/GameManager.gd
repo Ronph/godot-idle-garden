@@ -1,17 +1,20 @@
 extends Node
 
 signal gained_coins(int)
-signal basket_filled(int)
+signal basket_filled(index : int, amount: int)
 signal state_changed
+
+var has_loaded = false
 
 var coins : int = 100
 var unlocked_flowers: Array = ["Sunflower"]
 var unlocked_upgrades: Array = []
 var harvestSize = 1
 
-var basketSize = 10
-var basketCurrent = 0
-var moneyInBasket = 0
+var unlockedBaskets = 1
+var basketSize = [10, 10, 10, 10]
+var basketCurrent = [0, 0, 0, 0]
+var moneyInBasket = [0, 0, 0, 0]
 
 var tileList = {"null": 0}
 var flowerDic = {"Sunflower": [0, 6, 1, 0], #Sunflower, at position 0 in the list, with 5 growth stages, sell price, unlock price
@@ -41,7 +44,8 @@ func try_purchase(data: UpgradeData):
 			if data.increase_harvest_size > 0:
 				harvestSize = data.increase_harvest_size
 			if data.increase_basket_size > 0:
-				basketSize = data.increase_basket_size
+				for i in basketSize.size():
+					basketSize[i] = data.increase_basket_size
 			
 			unlocked_upgrades.append(data.display_name)
 	print(unlocked_flowers, unlocked_upgrades, "coins: ", coins, ", harvest size: ",harvestSize)
@@ -54,31 +58,55 @@ func gain_coins(coins_gained:int):
 	coins += coins_gained
 	emit_signal("gained_coins", coins)
 	print(coins)
+#All things baskets 
+func first_open_basket() -> int:
+	for i in unlockedBaskets:                 # iterates 0 .. unlockedBaskets-1
+		if basketCurrent[i] < basketSize[i]:
+			return i
+	return -1
 
-func fillBasket():
-	basketCurrent += 1
-	emit_signal("basket_filled", basketCurrent)
+func fillBasket(value : int):
+	var i = first_open_basket()
+	if i == -1:
+		return false
+	basketCurrent[i] += 1
+	moneyInBasket[i] += value
+	emit_signal("basket_filled",i, basketCurrent[i])
+	return true 
 
 
-func sellBasket():
-	gain_coins(moneyInBasket)
-	moneyInBasket = 0
-	basketCurrent = 0
-	emit_signal("basket_filled", basketCurrent)
+func sellBasket(index : int):
+	gain_coins(moneyInBasket[index])
+	moneyInBasket[index] = 0
+	basketCurrent[index] = 0
+	emit_signal("basket_filled", index, 0)
+func unlock_basket(cost: int) -> bool:
+	if unlockedBaskets >= 4 or coins < cost:
+		return false
+	coins -= cost
+	unlockedBaskets += 1
+	emit_signal("gained_coins", coins)
+	state_changed.emit()
+	return true
 
 
-
-
+#All things saving and stuff
 func get_data() -> Dictionary:
-	print("SAVING ", tileList)
-	return {"gold": coins, "unlocks": unlocked_flowers, "time": 0, "basket": [basketCurrent, moneyInBasket], "tiles": tileList}
-
+	return {
+		"gold": coins, "unlocks": unlocked_flowers, "time": 0,
+		"basket": [basketCurrent[0], moneyInBasket[0]],   # legacy key your loader still reads
+		"unlockedBaskets": unlockedBaskets,
+		"basketSize": basketSize,
+		"basketCurrent": basketCurrent,
+		"moneyInBasket": moneyInBasket,
+	}
 
 func loadData(coin, unlock, _timeSince, basketFill, tilesList):
 	coins = coin
-	basketCurrent = int(basketFill[0])
-	moneyInBasket = int(basketFill[1])
-	tileList = tilesList
-	emit_signal("gained_coins", coins)
-	emit_signal("basket_filled", basketCurrent)
 	unlocked_flowers = unlock
+	tileList = tilesList
+	if typeof(basketFill) == TYPE_ARRAY and basketFill.size() >= 2:
+		basketCurrent[0] = int(basketFill[0])
+		moneyInBasket[0] = int(basketFill[1])
+	emit_signal("gained_coins", coins)
+	emit_signal("basket_filled", 0, basketCurrent[0])
