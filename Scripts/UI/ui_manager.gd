@@ -21,13 +21,13 @@ func _on_shop_button_pressed():
 
 
 
-func _on_plant_button_pressed() -> void:
+func _on_sell_button_pressed() -> void:
+	GameManager.sellBasket()
+
+
+func _on_plant_pressed() -> void:
 	earth.plant()
 
 
-func _on_water_button_pressed() -> void:
+func _on_water_pressed() -> void:
 	earth.water()
-
-
-func _on_sell_button_pressed() -> void:
-	GameManager.sellBasket()
