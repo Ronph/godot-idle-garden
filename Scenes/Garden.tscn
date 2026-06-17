@@ -10,9 +10,11 @@
 [ext_resource type="Script" uid="uid://lb3mbbvk1vva" path="res://Scripts/flowers.gd" id="5_gscdv"]
 [ext_resource type="Script" uid="uid://df2yce2d43n8i" path="res://Scripts/earth.gd" id="6_o3d2i"]
 [ext_resource type="Texture2D" uid="uid://csl57eplrok4h" path="res://Sprites/UI/TestUI/freefantasy.png" id="10_ytob4"]
+[ext_resource type="Texture2D" uid="uid://dk34u8cchrxey" path="res://Sprites/UI/buttons/sow.png" id="11_1odlv"]
 [ext_resource type="Texture2D" uid="uid://bxowt8cgubxwc" path="res://Sprites/UI/TestUI/PlaceholderBasket.png" id="11_amql2"]
-[ext_resource type="Script" uid="uid://3q6rxcosrf0s" path="res://Scenes/basket_ui.gd" id="12_amql2"]
-[ext_resource type="Script" uid="uid://ccs7741nhj1ga" path="res://Scenes/sell_area.gd" id="13_amql2"]
+[ext_resource type="Texture2D" uid="uid://bg85tlwaneqxm" path="res://Sprites/UI/buttons/water.png" id="12_8d82a"]
+[ext_resource type="Script" path="res://Scenes/basket_ui.gd" id="12_amql2"]
+[ext_resource type="Script" path="res://Scenes/sell_area.gd" id="13_amql2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0205m"]
 texture = ExtResource("3_gscdv")
@@ -79,12 +81,41 @@ texture_margin_right = 8.0
 texture_margin_bottom = 8.0
 region_rect = Rect2(164, 45, 75, 97.5)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_amql2"]
-bg_color = Color(0.007843138, 0.007843138, 0.007843138, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
+[sub_resource type="AtlasTexture" id="AtlasTexture_8d82a"]
+atlas = ExtResource("11_1odlv")
+region = Rect2(0, 0, 34, 34)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4op8m"]
+load_path = "res://.godot/imported/sow.png-db582118d8f4a129c65c968c50d1b29b.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ic67"]
+atlas = SubResource("CompressedTexture2D_4op8m")
+region = Rect2(34, 0, 34, 34)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_klni1"]
+load_path = "res://.godot/imported/sow.png-db582118d8f4a129c65c968c50d1b29b.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sy7yv"]
+atlas = SubResource("CompressedTexture2D_klni1")
+region = Rect2(69, 1, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4op8m"]
+atlas = ExtResource("12_8d82a")
+region = Rect2(0, 0, 34, 34)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8ic67"]
+load_path = "res://.godot/imported/water.png-37de1e27ae8be410591dbd109a6c95bb.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_klni1"]
+atlas = SubResource("CompressedTexture2D_8ic67")
+region = Rect2(34, 0, 34, 34)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sy7yv"]
+load_path = "res://.godot/imported/water.png-37de1e27ae8be410591dbd109a6c95bb.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_olyvq"]
+atlas = SubResource("CompressedTexture2D_sy7yv")
+region = Rect2(69, 1, 32, 32)
 
 [node name="Garden" type="Node2D" unique_id=760420180]
 script = ExtResource("1_0205m")
@@ -164,26 +195,36 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -55.0
-offset_top = -33.0
-offset_bottom = 33.0
+offset_left = -34.0
+offset_top = -36.0
+offset_bottom = 36.0
 grow_horizontal = 0
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Plant_button" type="Button" parent="UIManager/VBoxContainer" unique_id=1021713783]
+[node name="plant" type="TextureButton" parent="UIManager/VBoxContainer" unique_id=142811244]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-text = "Plant"
+texture_normal = SubResource("AtlasTexture_8d82a")
+texture_pressed = SubResource("AtlasTexture_8ic67")
+texture_hover = SubResource("AtlasTexture_sy7yv")
+stretch_mode = 5
 
-[node name="Water_button" type="Button" parent="UIManager/VBoxContainer" unique_id=772637789]
+[node name="water" type="TextureButton" parent="UIManager/VBoxContainer" unique_id=1362052375]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-text = "Water
-"
+texture_normal = SubResource("AtlasTexture_4op8m")
+texture_pressed = SubResource("AtlasTexture_klni1")
+texture_hover = SubResource("AtlasTexture_olyvq")
+stretch_mode = 5
+
+[node name="BasketUI" type="TextureRect" parent="UIManager" unique_id=315300259]
+offset_left = 477.0
+offset_top = 205.0
+offset_right = 517.0
+offset_bottom = 245.0
+mouse_filter = 0
+texture = ExtResource("11_amql2")
+script = ExtResource("12_amql2")
 
 [node name="SellArea" type="Control" parent="UIManager" unique_id=377821405]
 layout_mode = 3
@@ -193,74 +234,6 @@ offset_top = 284.0
 offset_right = 642.0
 offset_bottom = 315.0
 script = ExtResource("13_amql2")
-
-[node name="BasketBar" type="HBoxContainer" parent="UIManager" unique_id=969582256]
-offset_left = 382.0
-offset_top = 234.0
-offset_right = 546.0
-offset_bottom = 270.0
-theme_override_constants/separation = 12
-
-[node name="Slot1" type="Panel" parent="UIManager/BasketBar" unique_id=634902441]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_amql2")
-
-[node name="BasketUI" type="TextureRect" parent="UIManager/BasketBar/Slot1" unique_id=315300259]
-layout_mode = 0
-offset_left = -4.0
-offset_top = -3.0
-offset_right = 36.0
-offset_bottom = 37.0
-mouse_filter = 0
-texture = ExtResource("11_amql2")
-expand_mode = 1
-script = ExtResource("12_amql2")
-
-[node name="Slot2" type="Panel" parent="UIManager/BasketBar" unique_id=1053459988]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_amql2")
-
-[node name="BasketUI" type="TextureRect" parent="UIManager/BasketBar/Slot2" unique_id=121383634]
-layout_mode = 0
-offset_left = -4.0
-offset_top = -2.0
-offset_right = 36.0
-offset_bottom = 38.0
-mouse_filter = 0
-texture = ExtResource("11_amql2")
-script = ExtResource("12_amql2")
-
-[node name="Slot3" type="Panel" parent="UIManager/BasketBar" unique_id=1585168927]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_amql2")
-
-[node name="BasketUI" type="TextureRect" parent="UIManager/BasketBar/Slot3" unique_id=2061917082]
-layout_mode = 0
-offset_left = -4.0
-offset_top = -3.0
-offset_right = 36.0
-offset_bottom = 37.0
-mouse_filter = 0
-texture = ExtResource("11_amql2")
-script = ExtResource("12_amql2")
-
-[node name="Slot4" type="Panel" parent="UIManager/BasketBar" unique_id=493984095]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_amql2")
-
-[node name="BasketUI" type="TextureRect" parent="UIManager/BasketBar/Slot4" unique_id=339001205]
-layout_mode = 0
-offset_left = -4.0
-offset_top = -2.0
-offset_right = 36.0
-offset_bottom = 38.0
-mouse_filter = 0
-texture = ExtResource("11_amql2")
-script = ExtResource("12_amql2")
 
 [node name="Label" type="Label" parent="." unique_id=223644544]
 offset_left = 338.0
@@ -273,5 +246,5 @@ position = Vector2(224, 112)
 
 [connection signal="pressed" from="UIManager/FloraButton" to="UIManager" method="_on_shop_button_pressed"]
 [connection signal="pressed" from="UIManager/SellButton" to="UIManager" method="_on_sell_button_pressed"]
-[connection signal="pressed" from="UIManager/VBoxContainer/Plant_button" to="UIManager" method="_on_plant_button_pressed"]
-[connection signal="pressed" from="UIManager/VBoxContainer/Water_button" to="UIManager" method="_on_water_button_pressed"]
+[connection signal="pressed" from="UIManager/VBoxContainer/plant" to="UIManager" method="_on_plant_pressed"]
+[connection signal="pressed" from="UIManager/VBoxContainer/water" to="UIManager" method="_on_water_pressed"]

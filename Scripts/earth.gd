@@ -13,6 +13,7 @@ func startFunc():
 	tileDic = GameManager.tileList
 	if tileDic.is_empty():
 		print("IS EMPTY")
+		tileDic = {}
 		for x in gridWidth:
 			for y in gridHeight:
 				tileDic[str(Vector2i(startPoint[0] + x, startPoint[1] + y))] = ["", -1, startPoint[0] + x, startPoint[1] + y]

@@ -2,7 +2,7 @@ extends Node
 
 
 const save_file_name: String = "res://garden_save.json"
-const default_dic: Dictionary = {"gold": 0, "unlocks": ["Sunflower"], "time": 0.0, "basket": 0, "tiles": {}}
+const default_dic: Dictionary = {"gold": 0, "unlocks": ["Sunflower"], "time": 0.0, "basket": [0, 0], "tiles": {}}
 
 func save_game(data: Dictionary):
 	var save_file: FileAccess = FileAccess.open(save_file_name, FileAccess.WRITE)
@@ -23,6 +23,7 @@ func load_game() -> Dictionary:
 		
 		var json = JSON.new()
 		var string_data: String = save_file.get_line()
+		
 		if json.parse(string_data) == OK:
 			json.parse(string_data)
 			var data: Dictionary = json.get_data()
@@ -30,7 +31,8 @@ func load_game() -> Dictionary:
 			return data
 		else:
 			push_error("Corrupted save data")
-	return default_dic.duplicate(true)
+			print(json.get_error_message())
+	return default_dic
 
 func reset_save():
 	save_game(default_dic)
