@@ -101,12 +101,24 @@ func get_data() -> Dictionary:
 		"moneyInBasket": moneyInBasket,
 	}
 
-func loadData(coin, unlock, _timeSince, basketFill, tilesList):
-	coins = coin
-	unlocked_flowers = unlock
-	tileList = tilesList
-	if typeof(basketFill) == TYPE_ARRAY and basketFill.size() >= 2:
-		basketCurrent[0] = int(basketFill[0])
-		moneyInBasket[0] = int(basketFill[1])
+func loadData(data: Dictionary):
+	coins = data.get("gold", coins)
+	unlocked_flowers = data.get("unlocks", unlocked_flowers)
+	tileList = data.get("tiles", {})
+	unlockedBaskets = data.get("unlockedBaskets", unlockedBaskets)
+
+	# arrays — use .duplicate() so you don't alias the saved dict's arrays
+	basketSize    = data.get("basketSize", basketSize).duplicate()
+	basketCurrent = data.get("basketCurrent", basketCurrent).duplicate()
+	moneyInBasket = data.get("moneyInBasket", moneyInBasket).duplicate()
+
+	# fall back to the legacy single-basket key only if the new keys are absent
+	if not data.has("basketCurrent") and data.has("basket"):
+		var b = data["basket"]
+		if typeof(b) == TYPE_ARRAY and b.size() >= 2:
+			basketCurrent[0] = int(b[0])
+			moneyInBasket[0] = int(b[1])
+
 	emit_signal("gained_coins", coins)
-	emit_signal("basket_filled", 0, basketCurrent[0])
+	for i in basketCurrent.size():
+		emit_signal("basket_filled", i, basketCurrent[i])
