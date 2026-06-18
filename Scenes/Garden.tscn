@@ -13,8 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://dk34u8cchrxey" path="res://Sprites/UI/buttons/sow.png" id="11_1odlv"]
 [ext_resource type="Texture2D" uid="uid://bxowt8cgubxwc" path="res://Sprites/UI/TestUI/PlaceholderBasket.png" id="11_amql2"]
 [ext_resource type="Texture2D" uid="uid://bg85tlwaneqxm" path="res://Sprites/UI/buttons/water.png" id="12_8d82a"]
-[ext_resource type="Script" path="res://Scenes/basket_ui.gd" id="12_amql2"]
-[ext_resource type="Script" path="res://Scenes/sell_area.gd" id="13_amql2"]
+[ext_resource type="Script" uid="uid://3q6rxcosrf0s" path="res://Scenes/basket_ui.gd" id="12_amql2"]
+[ext_resource type="Script" uid="uid://ccs7741nhj1ga" path="res://Scenes/sell_area.gd" id="13_amql2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0205m"]
 texture = ExtResource("3_gscdv")

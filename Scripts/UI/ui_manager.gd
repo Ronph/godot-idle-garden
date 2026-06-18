@@ -21,8 +21,8 @@ func _on_shop_button_pressed():
 
 
 
-func _on_sell_button_pressed() -> void:
-	GameManager.sellBasket()
+func _on_sell_button_pressed(index) -> void:
+	GameManager.sellBasket(index)
 
 
 func _on_plant_pressed() -> void:
