@@ -94,7 +94,7 @@ func unlock_basket(cost: int) -> bool:
 func get_data() -> Dictionary:
 	return {
 		"gold": coins, "unlocks": unlocked_flowers, "time": 0,
-		"basket": [basketCurrent[0], moneyInBasket[0]],   # legacy key your loader still reads
+		"basket": [basketCurrent[0], moneyInBasket[0]],
 		"unlockedBaskets": unlockedBaskets,
 		"basketSize": basketSize,
 		"basketCurrent": basketCurrent,
