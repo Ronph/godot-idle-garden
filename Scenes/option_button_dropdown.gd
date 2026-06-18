@@ -11,6 +11,9 @@ func add_item_to_dropdown():
 	clear()
 	for flower in GameManager.unlocked_flowers:
 		add_item(flower)
+	var idx = GameManager.unlocked_flowers.find(GameManager.currentFlower)
+	if idx != -1:
+		select(idx)	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
