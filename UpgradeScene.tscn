@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dp02w6siv421e"]
 
 [ext_resource type="Script" uid="uid://cdhsyi6hamc6g" path="res://Scripts/UI/UpgradeNode.gd" id="1_ljvxk"]
-[ext_resource type="Resource" uid="uid://by5v7l8iyrox7" path="res://Sprites/UpgradeTree/Harvest.tres" id="2_6ejf6"]
+[ext_resource type="Resource" uid="uid://by5v7l8iyrox7" path="res://Sprites/UpgradeTree/scythe1.tres" id="2_6ejf6"]
 
 [node name="UpgradeNode" type="TextureButton" unique_id=1122517123]
 offset_right = 40.0
