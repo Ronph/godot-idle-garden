@@ -16,3 +16,5 @@ extends Resource
 @export var increase_harvest_size : int
 
 @export var icon : Texture2D
+
+@export var id: String

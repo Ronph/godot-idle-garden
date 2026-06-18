@@ -10,4 +10,5 @@ upgrade_cost = 5
 description = "Increase Harvest Size"
 increase_harvest_size = 5
 icon = ExtResource("1_11aks")
+id = "scythe1"
 metadata/_custom_type_script = "uid://beqe0cpuetk5w"

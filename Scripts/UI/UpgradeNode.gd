@@ -8,8 +8,8 @@ func refresh():
 	else:
 		modulate = Color(1,1,1,0.4)
 func _ready():
-	tooltip_text = "%s\n%s\nCost: %d" % [data.display_name, data.description, data.upgrade_cost]
-	print(GameManager.unlocked_flowers)
+	tooltip_text = "%s\n%s\nCost: %d" % [data.id, data.description, data.upgrade_cost]
+	#print(GameManager.unlocked_flowers)
 	texture_normal = data.icon
 	GameManager.state_changed.connect(refresh)
 	refresh()

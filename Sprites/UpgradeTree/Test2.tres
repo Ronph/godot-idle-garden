@@ -11,3 +11,4 @@ is_flower = true
 upgrade_cost = 4
 description = "New Flora"
 icon = ExtResource("1_0hniy")
+id = "cabbage"

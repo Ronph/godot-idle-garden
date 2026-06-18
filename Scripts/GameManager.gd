@@ -29,7 +29,7 @@ func unlock_flower(flower:String, cost:int):
 		unlocked_flowers.append(flower)	
 		
 func can_purchase(data: UpgradeData) -> bool:
-	return coins >= data.upgrade_cost and unlocked_flowers.size() >= data.has_flowers and data.display_name not in unlocked_flowers and data.display_name not in unlocked_upgrades
+	return coins >= data.upgrade_cost and unlocked_flowers.size() >= data.has_flowers and data.id not in unlocked_flowers and data.id not in unlocked_upgrades
 		
 	
 func try_purchase(data: UpgradeData):
@@ -39,7 +39,7 @@ func try_purchase(data: UpgradeData):
 		coins -= data.upgrade_cost
 		emit_signal("gained_coins",coins)
 		if data.is_flower:
-			unlocked_flowers.append(data.display_name)
+			unlocked_flowers.append(data.id)
 		else:
 			if data.increase_harvest_size > 0:
 				harvestSize = data.increase_harvest_size
@@ -47,8 +47,9 @@ func try_purchase(data: UpgradeData):
 				for i in basketSize.size():
 					basketSize[i] = data.increase_basket_size
 			
-			unlocked_upgrades.append(data.display_name)
-	print(unlocked_flowers, unlocked_upgrades, "coins: ", coins, ", harvest size: ",harvestSize)
+			unlocked_upgrades.append(data.id)
+			print("unlocked upgrades: ", unlocked_upgrades)
+	#print(unlocked_flowers, unlocked_upgrades, "coins: ", coins, ", harvest size: ",harvestSize)
 	state_changed.emit()
 	return true
 		
@@ -57,7 +58,7 @@ func try_purchase(data: UpgradeData):
 func gain_coins(coins_gained:int):
 	coins += coins_gained
 	emit_signal("gained_coins", coins)
-	print(coins)
+	#print(coins)
 #All things baskets 
 func first_open_basket() -> int:
 	for i in unlockedBaskets:                 # iterates 0 .. unlockedBaskets-1
@@ -93,10 +94,9 @@ func unlock_basket(cost: int) -> bool:
 #All things saving and stuff
 func get_data() -> Dictionary:
 	return {
-		"gold": coins, "unlocks": unlocked_flowers, "time": 0,
+		"gold": coins, "unlockedFlowers": unlocked_flowers, "time": 0,
 		"basket": [basketCurrent[0], moneyInBasket[0]],
-		"unlockedBaskets": unlockedBaskets,
-		"basketSize": basketSize,
+		"unlocks": unlocked_upgrades,
 		"basketCurrent": basketCurrent,
 		"moneyInBasket": moneyInBasket,
 		"tiles": tileList
@@ -104,9 +104,9 @@ func get_data() -> Dictionary:
 
 func loadData(data: Dictionary):
 	coins = data.get("gold", coins)
-	unlocked_flowers = data.get("unlocks", unlocked_flowers)
+	unlocked_flowers = data.get("unlockedFlowers", unlocked_flowers)
 	tileList = data.get("tiles", {})
-	unlockedBaskets = data.get("unlockedBaskets", unlockedBaskets)
+	unlocked_upgrades = data.get("unlocks", unlocked_upgrades)
 
 	
 	basketSize    = data.get("basketSize", basketSize).duplicate()
@@ -123,3 +123,13 @@ func loadData(data: Dictionary):
 	emit_signal("gained_coins", coins)
 	for i in basketCurrent.size():
 		emit_signal("basket_filled", i, basketCurrent[i])
+	
+	VARIABLESET()
+
+func VARIABLESET():
+	for i in unlocked_upgrades:
+		if i[0] == "s":
+			if i == "scythe1":
+				harvestSize = 5
+			if i == "scythe2":
+				harvestSize = 9

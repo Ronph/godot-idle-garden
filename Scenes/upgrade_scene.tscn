@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://d31lk1oq4xc11" path="res://Scenes/upgrade_node.tscn" id="1_4gaae"]
 [ext_resource type="Resource" uid="uid://d2tg5xen2q0qk" path="res://Sprites/UpgradeTree/Test2.tres" id="2_jh00n"]
-[ext_resource type="PackedScene" uid="uid://ngv60e1cr0pk" path="res://Scenes/connection_line.tscn" id="3_jbf0j"]
+[ext_resource type="PackedScene" path="res://Scenes/connection_line.tscn" id="3_jbf0j"]
 [ext_resource type="Resource" uid="uid://by5v7l8iyrox7" path="res://Sprites/UpgradeTree/scythe1.tres" id="4_ictkm"]
 [ext_resource type="Resource" uid="uid://cn245bp16mxhu" path="res://Sprites/UpgradeTree/Scythe2.tres" id="5_ictkm"]
 
@@ -20,7 +20,7 @@ offset_right = 203.0
 offset_bottom = 133.0
 data = ExtResource("2_jh00n")
 
-[node name="ScytheUp" parent="." unique_id=1753605244 instance=ExtResource("1_4gaae")]
+[node name="Scythe1Up" parent="." unique_id=1753605244 instance=ExtResource("1_4gaae")]
 layout_mode = 0
 offset_left = 1.0
 offset_top = 43.0
@@ -32,10 +32,10 @@ data = ExtResource("4_ictkm")
 points = PackedVector2Array(239, 105)
 width = 2.0
 data = ExtResource("4_ictkm")
-from_button = NodePath("../Scythe1Up")
-to_button = NodePath("../ScytheUp")
+from_button = NodePath("../Scythe2Up")
+to_button = NodePath("../Scythe1Up")
 
-[node name="Scythe1Up" parent="." unique_id=1066811914 instance=ExtResource("1_4gaae")]
+[node name="Scythe2Up" parent="." unique_id=1066811914 instance=ExtResource("1_4gaae")]
 layout_mode = 0
 data = ExtResource("5_ictkm")
 
