@@ -99,6 +99,7 @@ func get_data() -> Dictionary:
 		"basketSize": basketSize,
 		"basketCurrent": basketCurrent,
 		"moneyInBasket": moneyInBasket,
+		"tiles": tileList
 	}
 
 func loadData(data: Dictionary):
@@ -107,12 +108,12 @@ func loadData(data: Dictionary):
 	tileList = data.get("tiles", {})
 	unlockedBaskets = data.get("unlockedBaskets", unlockedBaskets)
 
-	# arrays — use .duplicate() so you don't alias the saved dict's arrays
+	
 	basketSize    = data.get("basketSize", basketSize).duplicate()
 	basketCurrent = data.get("basketCurrent", basketCurrent).duplicate()
 	moneyInBasket = data.get("moneyInBasket", moneyInBasket).duplicate()
 
-	# fall back to the legacy single-basket key only if the new keys are absent
+	
 	if not data.has("basketCurrent") and data.has("basket"):
 		var b = data["basket"]
 		if typeof(b) == TYPE_ARRAY and b.size() >= 2:
