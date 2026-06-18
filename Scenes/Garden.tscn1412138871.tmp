@@ -15,7 +15,6 @@
 [ext_resource type="Texture2D" uid="uid://bg85tlwaneqxm" path="res://Sprites/UI/buttons/water.png" id="12_8d82a"]
 [ext_resource type="Script" uid="uid://3q6rxcosrf0s" path="res://Scenes/basket_ui.gd" id="12_amql2"]
 [ext_resource type="Script" uid="uid://ccs7741nhj1ga" path="res://Scenes/sell_area.gd" id="13_amql2"]
-[ext_resource type="Script" uid="uid://bo03dvvd3woys" path="res://Scenes/option_button_dropdown.gd" id="16_4op8m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0205m"]
 texture = ExtResource("3_gscdv")
@@ -236,20 +235,6 @@ offset_right = 642.0
 offset_bottom = 315.0
 script = ExtResource("13_amql2")
 
-[node name="OptionButton" type="OptionButton" parent="UIManager" unique_id=548748059]
-offset_left = 1.0
-offset_top = 52.0
-offset_right = 33.0
-offset_bottom = 72.0
-script = ExtResource("16_4op8m")
-
-[node name="Label" type="Label" parent="UIManager" unique_id=1333594317]
-offset_left = 1.0
-offset_top = 36.0
-offset_right = 123.0
-offset_bottom = 59.0
-text = "Selected Flower"
-
 [node name="Label" type="Label" parent="." unique_id=223644544]
 offset_left = 338.0
 offset_top = 153.0
@@ -263,4 +248,3 @@ position = Vector2(224, 112)
 [connection signal="pressed" from="UIManager/SellButton" to="UIManager" method="_on_sell_button_pressed"]
 [connection signal="pressed" from="UIManager/VBoxContainer/plant" to="UIManager" method="_on_plant_pressed"]
 [connection signal="pressed" from="UIManager/VBoxContainer/water" to="UIManager" method="_on_water_pressed"]
-[connection signal="item_selected" from="UIManager/OptionButton" to="." method="_on_option_button_item_selected"]

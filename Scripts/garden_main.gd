@@ -1,15 +1,13 @@
 extends Node2D
-
 @onready var earth: TileMapLayer = $TileMaps/Earth
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	var dict: Dictionary = save_manager.load_game()
-	GameManager.loadData(dict["gold"], dict["unlocks"], dict["time"], dict["basket"], dict["tiles"])
+	if not GameManager.has_loaded:
+		var dict: Dictionary = save_manager.load_game()
+		GameManager.loadData(dict)
+		GameManager.has_loaded = true
 	earth.startFunc()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
 

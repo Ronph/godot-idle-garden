@@ -18,6 +18,8 @@ func startFunc():
 			for y in gridHeight:
 				tileDic[str(Vector2i(startPoint[0] + x, startPoint[1] + y))] = ["", -1, startPoint[0] + x, startPoint[1] + y]
 	reset_tiles()
+	GameManager.emit_signal("gained_coins", GameManager.coins)
+	GameManager.state_changed.emit()
 	for keys in tileDic.keys():
 		if tileDic[keys][0] != "":
 			print(keys)

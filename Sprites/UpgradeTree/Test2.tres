@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="UpgradeData" format=3 uid="uid://d2tg5xen2q0qk"]
 
+[ext_resource type="Texture2D" uid="uid://blof55q4qy4ag" path="res://Sprites/UpgradeTree/cb.png" id="1_0hniy"]
 [ext_resource type="Script" uid="uid://beqe0cpuetk5w" path="res://Scripts/UI/upgrade_data.gd" id="1_n16vw"]
 
 [resource]
@@ -9,3 +10,4 @@ has_flowers = 1
 is_flower = true
 upgrade_cost = 4
 description = "New Flora"
+icon = ExtResource("1_0hniy")

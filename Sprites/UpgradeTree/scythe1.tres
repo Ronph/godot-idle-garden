@@ -8,6 +8,6 @@ script = ExtResource("2_aamod")
 display_name = "Scythe"
 upgrade_cost = 5
 description = "Increase Harvest Size"
-increase_harvest_size = 1
+increase_harvest_size = 5
 icon = ExtResource("1_11aks")
 metadata/_custom_type_script = "uid://beqe0cpuetk5w"
